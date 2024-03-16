@@ -1,6 +1,6 @@
 title: JIAHAO ZHANG
 author: JIAHAO ZHANG
-email: jiahao.zhng_public@berkeley.edu
+email: jiahao.zhang_public@berkeley.edu
 description: > # this means to ignore newlines until "show_exerpts:"
   Hi,this is Jiahao
 show_excerpts: true # set to true to show excerpts on the homepage
@@ -10,8 +10,8 @@ show_excerpts: true # set to true to show excerpts on the homepage
 sass:
   sass_dir: _sass
 plainwhite:
-  name: Adam Denisov
-  tagline: Developer. Designer
+  name: JIAHAO ZHANG
+  tagline: Junior student from HUST, now studying at UC Berkeley
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
