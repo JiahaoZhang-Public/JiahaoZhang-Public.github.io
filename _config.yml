@@ -26,10 +26,10 @@ author:
   pronouns         : # example: "she/her"  
   bio              : "I am seaking summer research assistant position,if my reasearch interst is highly matched with you, contact me!"
   location         : "Earth"
-  employer         : 
+  employer         : #
   uri              : # URL
   email            : "jiahao.zhang.public@gmail.com" 
-  edumail          : "jiahao.zhang_public@berkely.edu"
+
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
