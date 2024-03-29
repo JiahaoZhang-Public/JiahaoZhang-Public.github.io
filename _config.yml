@@ -36,7 +36,7 @@ author:
   googlescholar    : #
   impactstory      : # URL
   orcid            : #
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : #
   researchgate     : # URL
 
   # Repositories and software development
@@ -65,7 +65,7 @@ author:
   steam            : # Username
   telegram         : # URL
   tumblr           : # Username
-  twitter          : "UniofOxford"  # Replace this with your X / Twitter handle
+  twitter          : #
   vine             : # Username
   weibo            : # Username
   wikipedia        : # Username
