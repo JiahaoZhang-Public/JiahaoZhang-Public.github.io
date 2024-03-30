@@ -18,3 +18,7 @@ I am very fortunate to be advised by [Prof.Weijie](http://faculty.hust.edu.cn/we
 You can find CV here:[Jiahao's Curriculum Vitae](../assets/CV.pdf).
 
 [Email](mailto:jiahao.zhang.public@gmail.com) / [edu Email](mailto:jiahao.zhang_public@berkeley.edu) / [Github](https://github.com/JiahaoZhang-Public/)
+<p align="center"> 
+  Visitor count<br>
+  <img src="https://profile-counter.glitch.me/JiahaoZhang-Public/count.svg" />
+</p>
