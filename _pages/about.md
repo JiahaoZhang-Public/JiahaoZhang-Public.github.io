@@ -16,7 +16,7 @@ My research interest includes:
 I am very fortunate to be advised by [Prof.Weijie](http://faculty.hust.edu.cn/weijie1/zh_CN/index.htm),HUST.I was advised by [Prof.Chaowei](https://xiaocw11.github.io/),University of Wisconsin, Madison,and worked with his doc student Fangzhou Wu and [Qingzhao Zhang](https://zqzqz.github.io/),University of Michigan.
 
 You can find CV here:[Jiahao's Curriculum Vitae](../assets/CV.pdf).
-
+"Projects" and "CV" are not complete and still in the process of update,"Publications" and "Blog Posts" are not available now. I am working hard for my first paper.
 [Email](mailto:jiahao.zhang.public@gmail.com) / [edu Email](mailto:jiahao.zhang_public@berkeley.edu) / [Github](https://github.com/JiahaoZhang-Public/)
 <p align="center"> 
   Visitor count<br>
