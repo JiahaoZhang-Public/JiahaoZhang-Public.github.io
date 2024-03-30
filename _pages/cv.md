@@ -11,54 +11,33 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* B.S. in Electrical Engineering(Electronic Packaging Technology), Huazhong University of Science and Technology, 2021-2025
+  * Major: Electronic Packaging Technology — GPA: 85.2/4.02. Key courses included Computational Methods, Principle of Microcomputer, Stochastic Process, Signals and System.
+* Exchange student,UC Berkeley,2024
+  * Courses: Data structure, Artificial Intelligence
 
-Work experience
+Research Experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Spring 2024: Data Science Research Intern
+  * Grapedata
+  * Duties include: Developed a two-step fine-tuning method for Language Models to generate insights from limited survey data. Worked under UCL statistics professor Mark Briers.
+  * Supervisor: Mark Briers and Grapedata staff
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Fall 2023: Research Assistant
+  * AI Lab, University of Wisconsin-Madison
+  * Duties included: Designing a benchmark for coding detection and repair in LLMs. Key role in data preparation, experimental design, and execution.
+  * Supervisor: Chaowei Xiao
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
+* March - December 2023: Research Intern
+  * Quantitative Finance Group, Huazhong University of Science and Technology
+  * Duties included: Integrating machine learning with quantitative finance to predict market trends and optimize trading strategies.
+  * Supervisor: Professor Wei Jie
+
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* Programming Language:
+  * Python(mostly used)
+  * Java
+  * c++
+* Machine Learning Techniques and numerical computation algrithms
+* English Proficiency: IELTS(Band 7)
