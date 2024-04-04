@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a third year undergraduate student majoring in Electrical Engneering(Electronic Packaging Technorlogy), [Huazhong University of Science and Technology,HUST](https://www.hust.edu.cn/). I am now studying in UC Berkeley as an exchange student ,learning CS courses.
+I am a third year undergraduate student majoring in Electrical Engneering(Electronic Packaging Technology), [Huazhong University of Science and Technology,HUST](https://www.hust.edu.cn/). I am now studying in UC Berkeley as an exchange student ,learning CS courses.
 I am also a data science research intern in [Grapedata](https://www.grape-data.com/).
 My research interest includes:
 * Fintech: Utilize LLMs to develop textual analysis in asset pricing and Portfolio
