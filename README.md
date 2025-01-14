@@ -1,2 +1,2 @@
 # About me
-I am a third year undergraduate student majoring in Electrical Engneering(Electronic Packaging Technorlogy), [Huazhong University of Science and Technology,HUST](https://www.hust.edu.cn/). I am now studying in UC Berkeley as an exchange student ,learning CS courses.
+Hi there! 👋 I’m a senior undergraduate student majoring in Electrical Engneering(Electronic Packaging Technorlogy), [Huazhong University of Science and Technology,HUST](https://www.hust.edu.cn/).

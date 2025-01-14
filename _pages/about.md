@@ -7,10 +7,10 @@ redirect_from:
   - /about.html
 ---
 
-Hi there! 👋 I’m a senior undergraduate student majoring in Electrical Engineering (Electronic Packaging Technology) at [Huazhong University of Science and Technology (HUST)](https://www.hust.edu.cn/). I recently completed my exchange program at UC Berkeley, where I delved into CS courses. 
+Hi there! 👋 I’m a senior undergraduate student majoring in Electrical Engineering (Electronic Packaging Technology) at [Huazhong University of Science and Technology (HUST)](https://www.hust.edu.cn/). I recently completed my exchange program at UC Berkeley, where I delved into CS courses.
 
 🌟 **Exciting News!** 🌟  
-On June 11th, I joined the [Yuan Fajie Lab of Representation Learning](https://fajieyuan.github.io/) at Westlake University as a visiting student. My current research interests revolve around protein editing and multimodal protein language models. Our lab focuses on leveraging AI to solve challenging problems for biologists, accelerating the advancement of biological sciences. 
+On June 11th, I joined the [Yuan Fajie Lab of Representation Learning](https://fajieyuan.github.io/) at Westlake University as a visiting student. My current research interests revolve around protein editing and multimodal protein language models. Our lab focuses on leveraging AI to solve challenging problems for biologists, accelerating the advancement of biological sciences. I completed my visiting position in mid-December and returned to HUST to work on my graduation project on inverse modeling of flow fields.
 
 Check out our recent work:
 - [SaProt](https://github.com/westlake-repl/SaProt)
@@ -21,6 +21,9 @@ Check out our recent work:
 - Our project at Grapedata received the Cloud Computing Application Award in the UCB Data Science Discovery Program, standing out among over 100 teams! You can find more details on my [blog post](../_posts/2024-05-01-Award.md).
 - I completed my internship at [Grapedata](https://www.grape-data.com/), where I worked as a data science research intern.
 - I also finished my exchange program at UC Berkeley, where I took various CS courses and participated in the Data Science Discovery Program.
+
+🔬 **Current Project: Temporal Inference of Cells**  
+Temporal Inference of Cells (TIC) is a computational framework for analyzing cellular micro-environments using graph-based pseudo-time analysis. TIC integrates tools for graph construction, embedding preparation, pseudo-time trajectory computation, and biomarker trend visualization. I am collaborating on this project with PhD Jerry Wang.
 
 My research interests include:
 * **Fintech**: Utilizing LLMs to develop textual analysis in asset pricing and portfolio management.
