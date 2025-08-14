@@ -1,0 +1,8 @@
+# section information
+section:
+  name: accomplishments
+  id: accomplishments
+  enable: false
+  weight: 1
+  showOnNavbar: false
+  template: sections/accomplishments.html

@@ -1,0 +1,70 @@
+section:
+  name: Experiences
+  id: experiences
+  enable: true
+  weight: 3
+  showOnNavbar: true
+
+experiences:
+- company:
+    name: Laboratory of Cell Ethology, CIS, Westlake University
+    url: "https://www.cellethology.org/"
+    location: Hangzhou, China
+    logo: /images/experiences/cellethology.png
+    overview: "Interdisciplinary lab focused on computational biology, integrating AI methods with spatial transcriptomics to study tumor microenvironments."
+  positions:
+  - designation: Research Assistant
+    start: Jan 2025
+    end: July 2025
+    responsibilities:
+    - Led development of **TIC** (Temporal and Causal Inference of Cellular States), a modular Python framework for spatial transcriptomics analysis in tumor microenvironments.
+    - Integrated LLM-based cell type annotation, GNN feature extraction, pseudotime trajectory inference, and causal analysis of biomarker interactions during EMT.
+    - Designed preprocessing and embedding pipelines, implemented graph-based pseudotime algorithms, and validated through downstream analysis.
+    - Open-sourced and maintained TIC (v2.0.0) to ensure reproducibility and community adoption.
+
+- company:
+    name: Representation Learning Lab, Westlake University
+    url: "https://github.com/westlake-repl"
+    location: Hangzhou, China
+    logo: /images/experiences/westlakeu.png
+    overview: "Research group focusing on machine learning methods for biological and chemical data, especially generative modeling."
+  positions:
+  - designation: Research Assistant
+    start: June 2024
+    end: Dec 2024
+    responsibilities:
+    - Developed a **RF-diffusion–inspired generative model** to design proteins with controllable binding affinity for molecular circuits in synthetic biology.
+    - Designed custom model architectures and training objectives for high/low protein affinity optimization.
+    - Conducted model fine-tuning and experiments to enhance generation quality and functional performance.
+
+- company:
+    name: AI Lab (Chaowei Xiao), University of Wisconsin–Madison
+    url: "https://xiaocw11.github.io/"
+    location: Remote
+    logo: /images/experiences/uw-madison.png
+    overview: "Lab specializing in trustworthy AI, adversarial robustness, and AI for cybersecurity."
+  positions:
+  - designation: Research Assistant
+    start: Oct 2023
+    end: Dec 2023
+    responsibilities:
+    - Developed a benchmark to evaluate AI models for detecting and repairing software vulnerabilities.
+    - Conducted literature review to define evaluation metrics for vulnerability detection.
+    - Designed and ran experiments on real-world vulnerability datasets.
+    - Led data analysis to refine benchmark protocols and highlight improvement areas.
+
+- company:
+    name: Grapedata / UC Berkeley Data Science Discovery Program
+    url: "https://cdss.berkeley.edu/data-impact-data-science-discovery-celebrates-nine-years-groundbreaking-student-research"
+    location: Berkeley, CA
+    logo: /images/experiences/grapedata.png
+    overview: "Industry-academia collaboration delivering AI-powered survey analytics solutions."
+  positions:
+  - designation: Data Science Research Intern
+    start: Jan 2024
+    end: May 2024
+    responsibilities:
+    - Co-developed an **AI-based QA system** for B2B survey data, using RAG and zero-shot inference to generate actionable insights.
+    - Designed a two-stage workflow to fine-tune GPT for robust QA and insight generation.
+    - Resolved model tuning and data integration challenges to deliver a production-ready prototype.
+    - Product commercialized at **£10,000+ per unit**; awarded the Cloud Computing Application Award.

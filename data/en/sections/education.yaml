@@ -1,0 +1,53 @@
+# section information
+section:
+  name: Education
+  id: education
+  template: sections/education.html # or sections/education-alt.html
+  enable: true
+  weight: 4
+  showOnNavbar: true
+
+degrees:
+  - name: Ph.D. in Machine Learning
+    icon: fa-robot
+    timeframe: "Aug 2025 – Present"
+    institution:
+      name: Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)
+      url: "https://mbzuai.ac.ae/"
+      logo: /images/education/mbzuai.png
+    grade: # optional; 留空
+    publications: # optional
+    extracurricularActivities:
+      - "Research areas: Explainable AI (XAI); Controllable generative models for biology."
+    customSections:
+      - name: Supervisor
+        content: '[Lijie Hu](https://lijie-hu.github.io/)'
+      - name: Research Focus
+        content: "Explainable AI (XAI); controllable generation for protein/biomolecule design; trustworthy scientific AI."
+
+  - name: Visiting Student (Data Structures, Artificial Intelligence)
+    icon: fa-university
+    timeframe: "Jan 2024 – May 2024"
+    institution:
+      name: University of California, Berkeley
+      url: "https://www.berkeley.edu/"
+      logo: /images/education/ucb.png
+    customSections:
+      - name: Key Courses
+        content: "Data Structures; Artificial Intelligence."
+      - name: Notes
+        content: "Academic exchange semester; focus on applied AI and systems."
+
+  - name: B.Eng. in Electronic Information
+    icon: fa-microchip
+    timeframe: "Sept 2021 – June 2025"
+    institution:
+      name: Huazhong University of Science and Technology (HUST)
+      url: "https://www.hust.edu.cn/"
+      logo: /images/education/hust.png
+    customSections:
+      - name: Relevant Coursework
+        content: >
+          Probability Theory and Mathematical Statistics; Stochastic Processes; Computational Methods;
+          Digital Circuits; Python Programming; Signals and Systems; Information Retrieval;
+          Principles of Microcomputer; Data Structures.

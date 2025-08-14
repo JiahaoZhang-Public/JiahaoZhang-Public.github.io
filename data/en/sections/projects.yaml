@@ -1,0 +1,47 @@
+section:
+  name: Projects
+  id: projects
+  enable: true
+  weight: 5
+  showOnNavbar: true
+
+buttons:
+- name: All
+  filter: "all"
+- name: Professional
+  filter: "professional"
+- name: Academic
+  filter: "academic"
+- name: Hobby
+  filter: "hobby"
+
+projects:
+- name: Tumor Inference of Causality in EMT Progression
+  logo: /images/projects/tic.png
+  role: Developer
+  timeline: 2025
+  url: "https://github.com/cellethology/tic"
+  summary: "A computational framework for analyzing cellular micro-environments using graph-based pseudotime analysis and causal inference to study EMT progression in tumors."
+  tags: ["academic"]
+  description: |
+    Tumor Inference of Causality (TIC) integrates tools for graph construction, embedding preparation, pseudotime trajectory computation, and biomarker trend visualization.  
+    It enables comprehensive analyses of how cellular states evolve over time and how various factors may influence these trajectories.  
+    Key features include:
+    - **Pseudotime Ordering:** Infers temporal progression of cellular states.
+    - **Causal Inference:** Identifies potential causal relationships affecting cell trajectories.
+    - **Open-source Python package** for reproducible biomedical research.
+
+- name: LLM-DepthEval Evaluating GPT-4o for Monocular Depth Estimation
+  logo: /images/projects/llm-deptheval.png
+  role: Creator
+  timeline: 2025
+  url: "https://github.com/JiahaoZhang-Public/LLM-DepthEval"
+  summary: "An experimental study on GPT-4o’s ability to perform monocular depth estimation without task-specific fine-tuning."
+  tags: ["hobby"]
+  description: |
+    This project explores whether GPT-4o, a multimodal LLM, can estimate depth from single RGB images without explicit monocular depth training.  
+    Objectives:
+    - Determine if GPT-4o can perform monocular depth estimation without fine-tuning.
+    - Explore GPT-4o as a potential implicit **world model** that understands spatial and depth relations.
+    - Assess emergent physical reasoning from joint visual-text training.  
+    The project benchmarks GPT-4o’s predictions against depth estimation baselines to evaluate generalization capacity.

@@ -1,0 +1,32 @@
+# section information
+section:
+  name: Achievements
+  id: achievements
+  enable: true
+  weight: 9
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+
+achievements:
+  - title: Cloud Computing Application Award
+    image: /images/sections/achievements/cloudcomputingaward.png
+    summary: Awarded at the UC Berkeley Data Science Discovery Program (May 2024) for developing an AI-based insight generator using large language models to analyze business survey data. 
+    url: "https://cdss.berkeley.edu/data-impact-data-science-discovery-celebrates-nine-years-groundbreaking-student-research"
+
+  # - title: Undergraduate Academic Excellence Scholarship
+  #   image: /images/sections/achievements/academic-excellence.png
+  #   summary: Recognized for exceptional academic performance and commitment to excellence during the 2023-2024 academic year at HUST.
+
+  - title: Second Prize - College Student Mathematics Competition (Hubei Division)
+    image: /images/sections/achievements/hubei-math-competition.png
+    summary: Achieved second prize in the provincial-level competition in March 2023, demonstrating strong problem-solving and mathematical skills.
+
+  - title: Second Prize - Chinese Mathematics Competition
+    image: /images/sections/achievements/chinese-math-competition.png
+    summary: Awarded in January 2023 for outstanding mathematical problem-solving performance.
+
+  - title: Third Prize - China Undergraduate Mathematical Contest in Modeling
+    image: /images/sections/achievements/math-modeling.png
+    summary: Secured third prize in September 2022 for leading a team to analyze and classify ancient glassware using mathematical modeling and data analysis techniques.

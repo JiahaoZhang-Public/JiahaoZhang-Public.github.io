@@ -1,0 +1,64 @@
+# section information
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  # template: sections/about.html
+
+designation: Ph.D. Student in Machine Learning
+company:
+  name: Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)
+  url: "https://mbzuai.ac.ae/"
+
+resume: "files/resume.pdf"
+
+summary: >
+  I am a Ph.D. student in Machine Learning at the Mohamed bin Zayed University of Artificial Intelligence (MBZUAI), supervised by [Lijie Hu](https://lijie-hu.github.io/).
+  My research focuses on Explainable AI (XAI) and controllable generative models for biological research, including protein design and biomolecular modeling.
+  I have worked extensively on AI applications in biology, from spatial transcriptomics analysis to AI-driven protein affinity design, 
+  as well as industry collaborations on large language model–powered analytics.
+
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "mailto:jiahao.zhang@mbzuai.ac.ae"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://github.com/jiahaozhang-public"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/jiahao-zhang-4b508637a/"
+
+# - name: Google Scholar
+#   icon: "fas fa-graduation-cap"
+#   url: "https://scholar.google.com/citations?user=YOUR_ID" # 替换为你的 Scholar 链接
+
+badges:
+# - type: certification
+#   name: Cloud Computing Application Award — UC Berkeley Data Science Discovery Program
+#   url: "https://cdss.berkeley.edu/data-impact-data-science-discovery-celebrates-nine-years-groundbreaking-student-research"
+#   badge: "https://upload.wikimedia.org/wikipedia/commons/e/e0/UC_Berkeley_seal.svg"
+
+# - type: certification
+#   name: Undergraduate Academic Excellence Scholarship
+#   url: "#"
+#   badge: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Scholarship_icon.png"
+
+- type: soft-skill-indicator
+  name: Research
+  percentage: 90
+  color: blue
+
+- type: soft-skill-indicator
+  name: Team Collaboration
+  percentage: 98
+  color: yellow
+
+- type: soft-skill-indicator
+  name: Problem Solving
+  percentage: 92
+  color: orange

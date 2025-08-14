@@ -1,0 +1,14 @@
+# some information about you
+name: "Jiahao Zhang"
+nickname: "Jiahao"
+image: "/images/author/jiahao.jpg"
+
+greeting: "Hi, I am"
+
+contactInfo:
+  email: "jiahao.zhang@mbzuai.ac.ae"
+  linkedin: "jiahao-zhang-4b508637a"
+summary:
+- Ph.D. student in Machine Learning at MBZUAI
+- Focused on Explainable AI and controllable generative models for biology
+- Experienced in protein design, spatial transcriptomics, and AI-driven analytics

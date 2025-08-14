@@ -1,0 +1,8 @@
+# section information
+section:
+  name: publications
+  id: publications
+  enable: false
+  weight: 1
+  showOnNavbar: false
+  template: sections/publications.html

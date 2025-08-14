@@ -1,0 +1,85 @@
+# section information
+section:
+  name: Skills
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+  filter: true
+
+# filter buttons
+buttons:
+- name: All
+  filter: "all"
+- name: Basic
+  filter: "basic"
+- name: Language
+  filter: "language"
+- name: Data Analysis
+  filter: "data-analysis"
+- name: Deep Learning
+  filter: "deep-learning"
+- name: Others
+  filter: "others"
+
+# Your Skills.
+skills:
+  - name: Python
+    logo: /images/sections/skills/python.png
+    summary: "Primary language for machine learning research and data analysis; clean, testable research code and reproducible experiments."
+    categories: ["basic", "language"]
+    url: "https://www.python.org/"
+
+  - name: C++
+    logo: /images/sections/skills/cpp.png
+    summary: "Strong foundation in C++ for algorithmic problem solving, performance optimization, and system-level programming."
+    categories: ["basic", "language"]
+    url: "https://isocpp.org/"
+
+  - name: Java
+    logo: /images/sections/skills/java.png
+    summary: "Knowledge of Java for object-oriented programming, basic backend development, and algorithmic problem solving."
+    categories: ["language"]
+    url: "https://www.java.com/"
+
+  - name: NumPy
+    logo: /images/sections/skills/numpy.png
+    summary: "Proficient in vectorized operations, numerical computations, and scientific computing workflows."
+    categories: ["data-analysis"]
+    url: "https://numpy.org/"
+
+  - name: Pandas
+    logo: /images/sections/skills/pandas.png
+    summary: "Experienced in data manipulation, preprocessing, and exploratory data analysis with Pandas."
+    categories: ["data-analysis"]
+    url: "https://pandas.pydata.org/"
+
+  - name: scikit-learn
+    logo: /images/sections/skills/sklearn.png
+    summary: "Proficient in building and evaluating classical ML models, feature engineering, and model selection."
+    categories: ["data-analysis"]
+    url: "https://scikit-learn.org/"
+
+  - name: PyTorch
+    logo: /images/sections/skills/torch.png
+    summary: "Deep learning framework expertise; experienced with diffusion models, GNNs, transformers, and distributed training."
+    categories: ["deep-learning"]
+    url: "https://pytorch.org/"
+
+  - name: Hugging Face Transformers
+    logo: /images/sections/skills/huggingface.png
+    summary: "Fine-tuning and inference for LLMs; building RAG pipelines and integrating transformers into production workflows."
+    categories: ["deep-learning"]
+    url: "https://huggingface.co/docs/transformers"
+
+  - name: Git
+    logo: /images/sections/skills/git.png
+    summary: "Version control with Git; proficient in branching, PR review, and managing research codebases."
+    categories: ["basic", "others"]
+    url: "https://git-scm.com/"
+
+  - name: Linux
+    logo: /images/sections/skills/linux.png
+    summary: "Daily OS for development; shell scripting, server management, and HPC cluster job scheduling."
+    categories: ["others"]
+    url: "https://kernel.org/"
