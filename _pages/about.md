@@ -33,22 +33,33 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026 Poster</div><img src='images/controlling-repetition-plm-cover.png' alt="Controlling Repetition in Protein Language Models cover" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+{% assign publications_sorted = site.data.publications | sort: "year" | reverse %}
 
-[Controlling Repetition in Protein Language Models](https://arxiv.org/abs/2602.00782)
+{% assign published_papers = publications_sorted | where: "status", "published" %}
+{% if published_papers.size > 0 %}
+### Published
+{% for paper in published_papers %}
+{% include publication_item.html paper=paper %}
+{% endfor %}
+{% endif %}
 
-**Jiahao Zhang**, Zeqing Zhang, Di Wang, Lijie Hu
+{% assign under_review_papers = publications_sorted | where: "status", "under_review" %}
+{% if under_review_papers.size > 0 %}
+### Under review
+{% for paper in under_review_papers %}
+{% include publication_item.html paper=paper %}
+{% endfor %}
+{% endif %}
 
-Published: 26 Jan 2026; Last Modified: 11 Feb 2026  
-Primary Area: applications to physical sciences (physics, chemistry, biology, etc.)
+{% assign manuscript_papers = publications_sorted | where: "status", "manuscript" %}
+{% if manuscript_papers.size > 0 %}
+### Manuscript
+{% for paper in manuscript_papers %}
+{% include publication_item.html paper=paper %}
+{% endfor %}
+{% endif %}
 
-[**arXiv**](https://arxiv.org/abs/2602.00782) / [**PDF**](https://arxiv.org/pdf/2602.00782.pdf) / [**Code**](https://github.com/JiahaoZhang-Public/Controlling-Repetition-in-Protein-Language-Models)
-
-Protein language models (PLMs) frequently collapse into pathological repetition during generation, which reduces structural confidence and functional viability.
-We provide the first systematic study of repetition in PLMs and propose UCCS (Utility-Controlled Contrastive Steering), a dataset-guided inference-time steering method that reduces repetition while preserving foldability.
-</div>
-</div>
+*Author marks: `*` indicates single first author, `†` indicates co-first authors, and `✉` indicates corresponding author.*
 
 # 🎖 Honors and Awards
 - *2024.05*, Cloud Computing Application Award, UCB Data Science Discovery Program.
@@ -67,3 +78,8 @@ We provide the first systematic study of repetition in PLMs and propose UCCS (Ut
 - *2024.06 - 2024.12*, Research Assistant, Representation Learning Lab, Westlake University, Hangzhou, China.
 - *2024.01 - 2024.05*, Data Science Research Intern, Grapedata (UC Berkeley), Berkeley, CA, USA.
 - *2023.10 - 2023.12*, Research Assistant (Remote), AI Lab (Chaowei Xiao), University of Wisconsin-Madison.
+
+# 🧾 Services
+- Reviewer: ICML 2026
+- Reviewer: ACL Rolling Review (Jan 2026)
+- Reviewer: IEEE Computational Intelligence Magazine (IEEE CIM)

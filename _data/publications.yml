@@ -1,0 +1,33 @@
+- title: "Controlling Repetition in Protein Language Models"
+  status: "published"
+  topic: "AI4Sci"
+  venue: "ICLR"
+  year: 2026
+  venue_note: "Poster"
+  main_link: "https://arxiv.org/abs/2602.00782"
+  pdf: "https://arxiv.org/pdf/2602.00782.pdf"
+  arxiv: "https://arxiv.org/abs/2602.00782"
+  code: "https://github.com/JiahaoZhang-Public/Controlling-Repetition-in-Protein-Language-Models"
+  image: "images/controlling-repetition-plm-cover.png"
+  max_authors: 8
+  self_author: "Jiahao Zhang"
+  keywords: "Protein Language Models, Reliable Protein Generation, Repetition Control"
+  authors:
+    - name: "Jiahao Zhang"
+      co_first_author: true
+    - name: "Zeqing Zhang"
+      co_first_author: true
+    - name: "Di Wang"
+    - name: "Lijie Hu"
+      corresponding_author: true
+  bibtex: |
+    @misc{zhang2026controllingrepetitionproteinlanguage,
+      title={Controlling Repetition in Protein Language Models},
+      author={Jiahao Zhang and Zeqing Zhang and Di Wang and Lijie Hu},
+      year={2026},
+      eprint={2602.00782},
+      archivePrefix={arXiv},
+      primaryClass={q-bio.BM},
+      url={https://arxiv.org/abs/2602.00782},
+    }
+  abstract: "Protein language models (PLMs) frequently collapse into pathological repetition during generation, which undermines structural confidence and functional viability. We present a systematic study of repetition in PLMs and propose Utility-Controlled Contrastive Steering (UCCS), which steers generation using contrastive sets that maximize repetition differences while controlling structural utility. Across ESM-3 and ProtGPT2 on CATH, UniRef50, and SCOP, UCCS reduces repetition without retraining while preserving foldability-related confidence."

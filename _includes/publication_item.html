@@ -1,0 +1,164 @@
+{% assign paper = include.paper %}
+{% assign status_key = paper.status | downcase %}
+{% assign status_label = "Manuscript" %}
+{% assign status_class = "manuscript" %}
+{% if status_key == "published" %}
+  {% assign status_label = "Published" %}
+  {% assign status_class = "published" %}
+{% elsif status_key == "under_review" %}
+  {% assign status_label = "Under review" %}
+  {% assign status_class = "under-review" %}
+{% endif %}
+
+{% assign topic_raw = paper.topic | default: "XAI" | downcase %}
+{% assign topic_label = "XAI" %}
+{% assign topic_class = "xai" %}
+{% if topic_raw == "ai4sci" %}
+  {% assign topic_label = "AI4Sci" %}
+  {% assign topic_class = "ai4sci" %}
+{% endif %}
+{% assign self_name = paper.self_author | default: site.author.name %}
+{% assign self_first = false %}
+{% assign self_co_first = false %}
+{% assign self_corresponding = false %}
+{% for a in paper.authors %}
+  {% if a.name == self_name %}
+    {% if a.first_author %}
+      {% assign self_first = true %}
+    {% endif %}
+    {% if a.co_first_author %}
+      {% assign self_co_first = true %}
+    {% endif %}
+    {% if a.corresponding_author %}
+      {% assign self_corresponding = true %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% assign max_authors = paper.max_authors | default: 8 %}
+{% assign shown_count = 0 %}
+{% assign shown_names = "|" %}
+{% capture author_line %}{% endcapture %}
+
+{% if paper.authors.size <= max_authors %}
+  {% for a in paper.authors %}
+    {% capture marks_raw %}{% if a.co_first_author %}†{% elsif a.first_author %}*{% endif %}{% if a.corresponding_author %}✉{% endif %}{% endcapture %}
+    {% assign marks = marks_raw | strip %}
+    {% capture author_name %}{% if a.name == self_name %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif %}{% if marks != "" %}<sup>{{ marks }}</sup>{% endif %}{% endcapture %}
+    {% if author_line == "" %}
+      {% capture author_line %}{{ author_name }}{% endcapture %}
+    {% else %}
+      {% capture author_line %}{{ author_line }}, {{ author_name }}{% endcapture %}
+    {% endif %}
+    {% assign shown_count = shown_count | plus: 1 %}
+  {% endfor %}
+{% else %}
+  {% for a in paper.authors %}
+    {% assign required = false %}
+    {% if a.first_author or a.co_first_author or a.corresponding_author %}
+      {% assign required = true %}
+    {% endif %}
+    {% if a.name == self_name %}
+      {% assign required = true %}
+    {% endif %}
+    {% assign token = "|" | append: a.name | append: "|" %}
+    {% if required and shown_count < max_authors %}
+      {% unless shown_names contains token %}
+        {% capture marks_raw %}{% if a.co_first_author %}†{% elsif a.first_author %}*{% endif %}{% if a.corresponding_author %}✉{% endif %}{% endcapture %}
+        {% assign marks = marks_raw | strip %}
+        {% capture author_name %}{% if a.name == self_name %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif %}{% if marks != "" %}<sup>{{ marks }}</sup>{% endif %}{% endcapture %}
+        {% if author_line == "" %}
+          {% capture author_line %}{{ author_name }}{% endcapture %}
+        {% else %}
+          {% capture author_line %}{{ author_line }}, {{ author_name }}{% endcapture %}
+        {% endif %}
+        {% assign shown_names = shown_names | append: a.name | append: "|" %}
+        {% assign shown_count = shown_count | plus: 1 %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+
+  {% for a in paper.authors %}
+    {% assign token = "|" | append: a.name | append: "|" %}
+    {% unless shown_names contains token %}
+      {% if shown_count < max_authors %}
+        {% capture marks_raw %}{% if a.co_first_author %}†{% elsif a.first_author %}*{% endif %}{% if a.corresponding_author %}✉{% endif %}{% endcapture %}
+        {% assign marks = marks_raw | strip %}
+        {% capture author_name %}{% if a.name == self_name %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif %}{% if marks != "" %}<sup>{{ marks }}</sup>{% endif %}{% endcapture %}
+        {% if author_line == "" %}
+          {% capture author_line %}{{ author_name }}{% endcapture %}
+        {% else %}
+          {% capture author_line %}{{ author_line }}, {{ author_name }}{% endcapture %}
+        {% endif %}
+        {% assign shown_names = shown_names | append: a.name | append: "|" %}
+        {% assign shown_count = shown_count | plus: 1 %}
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+{% endif %}
+
+{% if paper.authors.size > shown_count %}
+  {% capture author_line %}{{ author_line }}, ...{% endcapture %}
+{% endif %}
+
+{% capture venue_line %}
+{% if status_key == "published" %}
+{{ paper.venue }}{% if paper.year %} {{ paper.year }}{% endif %}{% if paper.venue_note %} · {{ paper.venue_note }}{% endif %}
+{% elsif status_key == "under_review" %}
+{% if paper.target_venue %}Target venue: {{ paper.target_venue }}{% if paper.year %} {{ paper.year }}{% endif %}{% else %}Preprint / under review{% endif %}
+{% else %}
+{% if paper.target_venue %}Target venue: {{ paper.target_venue }}{% if paper.year %} {{ paper.year }}{% endif %}{% else %}Preprint / manuscript{% endif %}
+{% endif %}
+{% endcapture %}
+{% assign card_id = paper.title | slugify %}
+
+<article class="pub-card">
+  <div class="pub-card__cover">
+    <details class="pub-cover-toggle">
+      <summary class="pub-cover-summary">
+        <img src="{{ paper.image | default: 'images/500x300.png' }}" alt="{{ paper.title }} cover" />
+        <span class="pub-cover-hint">Click cover to view abstract</span>
+      </summary>
+      <div class="pub-abstract">
+        {{ paper.abstract }}
+      </div>
+    </details>
+  </div>
+
+  <div class="pub-card__content">
+    <h3 class="pub-title"><a href="{{ paper.main_link | default: paper.pdf | default: paper.arxiv }}">{{ paper.title }}</a></h3>
+
+    <div class="pub-badges">
+      <span class="pub-badge pub-badge--status pub-badge--{{ status_class }}">{{ status_label }}</span>
+      <span class="pub-badge pub-badge--topic pub-badge--topic-{{ topic_class }}">{{ topic_label }}</span>
+      {% if self_first %}
+      <span class="pub-badge pub-badge--role">First</span>
+      {% endif %}
+      {% if self_corresponding %}
+      <span class="pub-badge pub-badge--role">Corresponding</span>
+      {% endif %}
+    </div>
+
+    <p class="pub-venue">{{ venue_line | strip }}</p>
+    <p class="pub-authors">{{ author_line }}</p>
+
+    <div class="pub-links">
+      {% if paper.pdf %}<a href="{{ paper.pdf }}">PDF</a>{% endif %}
+      {% if paper.arxiv %}<a href="{{ paper.arxiv }}">arXiv</a>{% endif %}
+      {% if paper.code %}<a href="{{ paper.code }}">Code</a>{% endif %}
+      {% if paper.project %}<a href="{{ paper.project }}">Project</a>{% endif %}
+      {% if paper.slides %}<a href="{{ paper.slides }}">Slides</a>{% endif %}
+      {% if paper.bibtex %}
+      <button type="button" class="pub-link-button js-copy-bibtex" data-bibtex-id="bibtex-{{ card_id }}">BibTeX</button>
+      {% endif %}
+    </div>
+
+    {% if paper.keywords %}
+    <p class="pub-keywords"><strong>Keywords:</strong> {{ paper.keywords }}</p>
+    {% endif %}
+
+    {% if paper.bibtex %}
+    <pre id="bibtex-{{ card_id }}" hidden>{{ paper.bibtex }}</pre>
+    {% endif %}
+  </div>
+</article>

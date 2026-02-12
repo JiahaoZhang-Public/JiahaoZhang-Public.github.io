@@ -22,13 +22,14 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Jiahao Zhang (张家豪)"
-  avatar           : "images/android-chrome-512x512.png"
+  avatar           : "images/author/jiahao.jpg"
   bio              : "First-year PhD Student, MBZUAI Machine Learning Department"
   location         :
   employer         : "MBZUAI"
   pubmed           : 
   googlescholar    : "https://scholar.google.hk/citations?user=7CGK5UkAAAAJ"
   email            : "jiahao.zhang@mbzuai.ac.ae"
+  cv               : "/assets/CV.pdf"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
