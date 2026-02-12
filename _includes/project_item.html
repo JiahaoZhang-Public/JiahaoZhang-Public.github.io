@@ -1,0 +1,46 @@
+{% assign project = include.project %}
+{% assign role_raw = project.role | default: "participate" | downcase %}
+{% assign role_label = "Participate" %}
+{% assign role_class = "participate" %}
+{% if role_raw == "lead" %}
+  {% assign role_label = "Lead" %}
+  {% assign role_class = "lead" %}
+{% elsif role_raw == "core" %}
+  {% assign role_label = "Core" %}
+  {% assign role_class = "core" %}
+{% endif %}
+
+<article class="project-card">
+  <div class="project-card__cover">
+    <img src="{{ project.cover | default: 'images/500x300.png' | relative_url }}" alt="{{ project.title }} cover" />
+  </div>
+
+  <div class="project-card__content">
+    <h3 class="project-title"><a href="{{ project.web | default: project.code | default: project.repo }}">{{ project.title }}</a></h3>
+
+    <div class="project-meta">
+      <span class="project-role project-role--{{ role_class }}">{{ role_label }}</span>
+      {% if project.status %}<span class="project-status">{{ project.status | capitalize }}</span>{% endif %}
+      {% if project.period %}<span class="project-period">{{ project.period }}</span>{% endif %}
+      {% if project.category %}<span class="project-status">Category: {{ project.category }}</span>{% endif %}
+      {% if project.topic %}<span class="project-status">Topic: {{ project.topic }}</span>{% endif %}
+    </div>
+
+    {% if project.tags %}
+    <div class="project-tags">
+      {% for tag in project.tags %}
+      <span class="project-tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if project.summary %}
+    <p class="project-summary">{{ project.summary }}</p>
+    {% endif %}
+
+    <div class="project-links">
+      {% if project.web %}<a href="{{ project.web }}">Web</a>{% endif %}
+      {% if project.code %}<a href="{{ project.code }}">Code</a>{% endif %}
+    </div>
+  </div>
+</article>

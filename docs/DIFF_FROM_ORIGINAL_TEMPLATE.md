@@ -2,116 +2,124 @@
 
 Original template: [RayeRen/acad-homepage.github.io](https://github.com/RayeRen/acad-homepage.github.io)
 
-This document summarizes what changed in this repo compared with the original template, with focus on the publication logic.
+This repo keeps the original Jekyll base, but restructures homepage content into reusable, data-driven components. The biggest changes are in `Publications` and `Projects`.
 
 ## High-level Changes
 
-- Replaced all placeholder personal/profile content with Jiahao Zhang's content.
-- Added `Services` section and removed `Invited Talks`.
-- Added profile photo and CV download link in sidebar.
-- Added project-page-safe path handling for GitHub Pages (`url` + `baseurl`, and `relative_url` usage in key assets/links).
-- Reworked publication area from hardcoded markdown/HTML into a data-driven card system.
+- Replaced placeholder profile/content with Jiahao Zhang's academic content.
+- Added sections: `Services` and `Projects`.
+- Removed `Invited Talks`.
+- Added profile photo and CV download in sidebar.
+- Added project-page-safe path handling for GitHub Pages subpath deployment.
+- Refactored publication rendering from hardcoded content to metadata + template.
 
-## Publication: Original vs Current
+## Publications: Original vs Current
 
-### Original Template
+### Original template behavior
 
-- Publications are directly hardcoded in `_pages/about.md`.
-- No shared publication data file.
-- No structured status/topic/role semantics.
-- No grouping by status.
-- No author truncation logic.
+- Publications are hardcoded in `_pages/about.md`.
+- No shared publication metadata file.
+- No status grouping or consistent badge system.
+- No author truncation policy.
 - No BibTeX copy interaction.
 
-### Current Repo
+### Current behavior
 
-- Publication data is stored in `_data/publications.yml`.
-- Publication rendering is centralized in `_includes/publication_item.html`.
-- `_pages/about.md` only orchestrates grouping/order and include calls.
-- Cards enforce a fixed information hierarchy:
+- Data file: `_data/publications.yml`
+- Renderer include: `_includes/publication_item.html`
+- Homepage orchestration: `_pages/about.md`
+- Grouping/order:
+  - `Published`
+  - `Under review`
+  - `Manuscript`
+  - Grouped after sorting by `year` descending.
+
+### Publication card logic
+
+- Fixed information hierarchy:
   1. Title (clickable)
-  2. Badges: status + topic + optional role
-  3. Venue + year
-  4. Authors (with mark symbols and truncation)
-  5. Links in fixed order (`PDF -> arXiv -> Code -> Project -> Slides -> BibTeX`)
+  2. Badges (status + topic + optional role)
+  3. Venue/year line
+  4. Author line
+  5. Links (fixed order)
   6. Keywords
-- Cover image supports click-to-expand abstract (`<details>` block).
-- BibTeX supports one-click copy via `assets/js/publications.js`.
-
-## Publication Logic Details
-
-### 1) Data Model (`_data/publications.yml`)
-
-Each paper is represented as structured metadata (example fields):
-
-- `title`, `status`, `topic`
-- `venue`, `year`, `venue_note`
-- `main_link`, `pdf`, `arxiv`, `code`, `project`, `slides`
-- `image`, `keywords`, `abstract`, `bibtex`
-- `self_author`, `max_authors`
-- `authors` list with role flags:
-  - `first_author: true`
-  - `co_first_author: true`
-  - `corresponding_author: true`
-
-### 2) Grouping and Ordering (`_pages/about.md`)
-
-- Papers are sorted by `year` descending.
-- Then grouped and rendered in this order:
+- Status normalization:
   - `Published`
   - `Under review`
   - `Manuscript`
-
-### 3) Card Rendering (`_includes/publication_item.html`)
-
-- Status badge vocabulary is fixed:
-  - `Published`
-  - `Under review`
-  - `Manuscript`
-- Topic badge is normalized to:
+- Topic normalization:
   - `XAI`
   - `AI4Sci`
-- Role badge supports:
-  - `First`
-  - `Corresponding`
-  - (co-first is kept in author marks, not as a dedicated badge)
-
-### 4) Author Display Rules
-
-- Maximum shown authors: `max_authors` (default 8).
-- If author count exceeds max:
-  - Always include first/co-first authors.
-  - Always include corresponding author(s).
-  - Always include `self_author` (if not already included).
-  - Fill remaining slots in original author order.
-  - Append `...` when truncated.
-- Marks:
+- Author marks:
   - `*` single first author
   - `†` co-first author
   - `✉` corresponding author
-- `Jiahao Zhang` is bolded in author line.
+- Author truncation:
+  - Default max: `8`
+  - Preserve first/co-first, corresponding, and self before filling remaining slots.
+- Interaction:
+  - Cover click expands abstract (`details/summary`).
+  - BibTeX button supports one-click copy via `assets/js/publications.js`.
+- Styling:
+  - Card layout, badge styles, and cover behavior in `assets/css/main.scss`.
 
-### 5) Interaction and Styling
+## Projects: Original vs Current
 
-- `assets/js/publications.js`:
-  - BibTeX copy button logic.
-- `assets/css/main.scss`:
-  - Publication card layout and badges.
-  - Cover area behavior (fixed aspect ratio + crop policy).
+### Original template behavior
 
-## GitHub Pages Path Handling Changes
+- No dedicated `Projects` section or project card system.
 
-To support project page deployment (`https://jiahaozhang-public.github.io/Jiahao-Zhang/`):
+### Current behavior
 
-- `_config.yml` defines:
+- Data file: `_data/projects.yml`
+- Renderer include: `_includes/project_item.html`
+- Homepage section: `# 🚀 Projects` in `_pages/about.md`
+- Navigation entry in `_data/navigation.yml`
+
+### Project card logic
+
+- No author list is shown.
+- Role-based ownership is explicit:
+  - `Lead`
+  - `Core`
+  - `Participate`
+- Card fields:
+  - title
+  - role/status/period
+  - category/topic
+  - tags
+  - summary
+  - links (current convention: `Web`, `Code`)
+- Cover area:
+  - Fixed 5:3 ratio with crop behavior.
+  - Responsive layout (desktop cover/content split).
+
+## Sidebar/Profile Changes
+
+- Avatar uses `images/author/jiahao.jpg`.
+- CV download link exposed from `_config.yml` (`author.cv`) and rendered in `_includes/author-profile.html`.
+
+## GitHub Pages Subpath Safety
+
+To support deployment under:
+`https://jiahaozhang-public.github.io/Jiahao-Zhang/`
+
+### Config
+
+- `_config.yml`:
   - `url: "https://jiahaozhang-public.github.io"`
   - `baseurl: "/Jiahao-Zhang"`
-- Key template asset links were switched to `| relative_url` in:
-  - `_includes/head.html`
-  - `_includes/head/custom.html`
-  - `_includes/scripts.html`
-  - `_includes/masthead.html`
-  - `_includes/author-profile.html`
-  - `_includes/publication_item.html`
 
-This avoids the local/online mismatch where CSS/JS appears normal locally but breaks after deployment under a subpath.
+### Path handling
+
+Key assets/links were switched to `| relative_url` in:
+
+- `_includes/head.html`
+- `_includes/head/custom.html`
+- `_includes/scripts.html`
+- `_includes/masthead.html`
+- `_includes/author-profile.html`
+- `_includes/publication_item.html`
+- `_includes/project_item.html`
+
+This avoids local/online path mismatches (common issue on project pages where CSS/JS/images load locally but fail after push).

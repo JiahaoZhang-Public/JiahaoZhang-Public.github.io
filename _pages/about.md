@@ -61,6 +61,11 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 
 *Author marks: `*` indicates single first author, `†` indicates co-first authors, and `✉` indicates corresponding author.*
 
+# 🚀 Projects
+{% for project in site.data.projects %}
+{% include project_item.html project=project %}
+{% endfor %}
+
 # 🎖 Honors and Awards
 - *2024.05*, Cloud Computing Application Award, UCB Data Science Discovery Program.
 - *2023 - 2024*, Undergraduate Academic Excellence Scholarship.
