@@ -24,11 +24,12 @@ I work on Explainable AI (XAI) as an interactive tool for understanding and stee
 PhD Supervisor: [Prof. Lijie Hu](https://lijie-hu.github.io/)  
 Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 
-[Google Scholar](https://scholar.google.hk/citations?user=7CGK5UkAAAAJ) <img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations">
+<!-- [Google Scholar](https://scholar.google.hk/citations?user=7CGK5UkAAAAJ) <img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"> -->
 
 
 # 🔥 News
 - *2026.02*: &nbsp;🎉 Our paper **Controlling Repetition in Protein Language Models** was accepted as an **ICLR 2026 Poster**.
+- *2025.08*: &nbsp;🎉 I joined MBZUAI as a phd student in Machine Learning Department, new start point here!
 
 # 📝 Publications 
 
@@ -50,16 +51,19 @@ We provide the first systematic study of repetition in PLMs and propose UCCS (Ut
 </div>
 
 # 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2024.05*, Cloud Computing Application Award, UCB Data Science Discovery Program.
+- *2023 - 2024*, Undergraduate Academic Excellence Scholarship.
+- *2023.03*, Second Prize, College Student Mathematics Competition (Hubei Division).
+- *2023.01*, Second Prize, Chinese Mathematics Competition.
+- *2022.09*, Third Prize, China Undergraduate Mathematical Contest in Modeling.
 
 # 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-
-# 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
+- *2025.08 - Present*, **Ph.D. in Machine Learning**, MBZUAI, Abu Dhabi, UAE. Supervisor: Prof. Lijie Hu.
+- *2021.09 - 2025.06*, **B.Eng. in Electronic Information**, Huazhong University of Science and Technology (HUST), Wuhan, China. 
+- *2024.01 - 2024.05*, **Visiting Student**, UC Berkeley, Berkeley, CA, USA. 
 
 # 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+- *2025.01 - 2025.07*, Research Assistant, Laboratory of Cell Ethology (CIS), Westlake University, Hangzhou, China.
+- *2024.06 - 2024.12*, Research Assistant, Representation Learning Lab, Westlake University, Hangzhou, China.
+- *2024.01 - 2024.05*, Data Science Research Intern, Grapedata (UC Berkeley), Berkeley, CA, USA.
+- *2023.10 - 2023.12*, Research Assistant (Remote), AI Lab (Chaowei Xiao), University of Wisconsin-Madison.
