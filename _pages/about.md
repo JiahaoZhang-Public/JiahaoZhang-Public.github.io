@@ -19,7 +19,9 @@ redirect_from:
 
 I am **Jiahao Zhang (张家豪)**, a first-year PhD student in the Machine Learning Department at MBZUAI.
 
-I work on Explainable AI (XAI) as an interactive tool for understanding and steering models, and I evaluate it in AI4Sci settings.
+**Research Interest.** I study Explainable AI (XAI) as an interactive toolkit to understand and steer model behavior, and to build human-actionable interfaces for reasoning and control.
+
+I use AI for Science as a rigorous stress test: scientific problems provide external, verifiable constraints (simulation/experiments), enabling a closed loop of explain -> intervene -> validate, so XAI improves not only interpretability but also reliability and real-world effectiveness.
 
 PhD Supervisor: [Prof. Lijie Hu](https://lijie-hu.github.io/)  
 Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)

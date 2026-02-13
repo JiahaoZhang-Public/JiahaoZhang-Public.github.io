@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Jiahao Zhang"
-description              : "I work on Explainable AI (XAI) as an interactive tool for understanding and steering models, and I evaluate it in AI4Sci settings."
+description              : "I study Explainable AI (XAI) as an interactive toolkit to understand and steer model behavior, and to build human-actionable interfaces for reasoning and control. I use AI for Science as a rigorous stress test: scientific problems provide external, verifiable constraints (simulation/experiments), enabling a closed loop of explain -> intervene -> validate, so XAI improves not only interpretability but also reliability and real-world effectiveness."
 repository               : "JiahaoZhang-Public/Jiahao-Zhang"
 google_scholar_stats_use_cdn : true
 
