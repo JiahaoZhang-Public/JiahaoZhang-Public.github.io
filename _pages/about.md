@@ -68,6 +68,10 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 {% include project_item.html project=project %}
 {% endfor %}
 
+# 🛠 Open Source Tools
+- **MEAP** (**Lead**)  
+  [GitHub](https://github.com/JiahaoZhang-Public/MEAP) | [TestPyPI](https://test.pypi.org/project/meap/)
+
 # 🎖 Honors and Awards
 - *2024.05*, Cloud Computing Application Award, UCB Data Science Discovery Program.
 - *2023 - 2024*, Undergraduate Academic Excellence Scholarship.

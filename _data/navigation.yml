@@ -12,6 +12,9 @@ main:
   - title: "Projects"
     url: "/#-projects"
 
+  - title: "Open Source Tools"
+    url: "/#-open-source-tools"
+
   - title: "Honors and Awards"
     url: "/#-honors-and-awards"
 
