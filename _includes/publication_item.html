@@ -105,7 +105,7 @@
 {% if status_key == "published" %}
 {{ paper.venue }}{% if paper.year %} {{ paper.year }}{% endif %}{% if paper.venue_note %} · {{ paper.venue_note }}{% endif %}
 {% elsif status_key == "under_review" %}
-{% if paper.target_venue %}Target venue: {{ paper.target_venue }}{% if paper.year %} {{ paper.year }}{% endif %}{% else %}Preprint / under review{% endif %}
+{% if paper.target_venue %}Submitted to: {{ paper.target_venue }}{% if paper.year %} {{ paper.year }}{% endif %}{% else %}Preprint / under review{% endif %}
 {% else %}
 {% if paper.target_venue %}Target venue: {{ paper.target_venue }}{% if paper.year %} {{ paper.year }}{% endif %}{% else %}Preprint / manuscript{% endif %}
 {% endif %}
@@ -126,7 +126,8 @@
   </div>
 
   <div class="pub-card__content">
-    <h3 class="pub-title"><a href="{{ paper.main_link | default: paper.pdf | default: paper.arxiv }}">{{ paper.title }}</a></h3>
+    {% assign title_href = paper.main_link | default: paper.pdf | default: paper.arxiv %}
+    <h3 class="pub-title">{% if title_href %}<a href="{{ title_href }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}</h3>
 
     <div class="pub-badges">
       <span class="pub-badge pub-badge--status pub-badge--{{ status_class }}">{{ status_label }}</span>
@@ -143,9 +144,9 @@
     <p class="pub-authors">{{ author_line }}</p>
 
     <div class="pub-links">
-      {% if paper.pdf %}<a href="{{ paper.pdf }}">PDF</a>{% endif %}
-      {% if paper.arxiv %}<a href="{{ paper.arxiv }}">arXiv</a>{% endif %}
-      {% if paper.code %}<a href="{{ paper.code }}">Code</a>{% endif %}
+      {% if paper.pdf %}<a href="{{ paper.pdf }}">PDF</a>{% elsif paper.placeholder_links %}<span class="pub-link-placeholder" title="Coming soon">[Link]</span>{% endif %}
+      {% if paper.arxiv %}<a href="{{ paper.arxiv }}">arXiv</a>{% elsif paper.placeholder_links %}<span class="pub-link-placeholder" title="Coming soon">[ArXiv]</span>{% endif %}
+      {% if paper.code %}<a href="{{ paper.code }}">Code</a>{% elsif paper.placeholder_links %}<span class="pub-link-placeholder" title="Coming soon">[code]</span>{% endif %}
       {% if paper.project %}<a href="{{ paper.project }}">Project</a>{% endif %}
       {% if paper.slides %}<a href="{{ paper.slides }}">Slides</a>{% endif %}
       {% if paper.bibtex %}

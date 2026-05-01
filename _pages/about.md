@@ -30,6 +30,9 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 
 
 # 🔥 News
+- *2026.05*: &nbsp;🎉 Our paper **Bayesian Gated Non-Negative Contrastive Learning** was accepted to **ICML 2026** (with Peng Cui, co-first; Lijie Hu, corresponding).
+- *2026.04*: &nbsp;📝 Submitted our manuscript **Solar-driven evapofiltration enables co-production of lithium and freshwater from extreme brines** to **Nature Sustainability**.
+- *2026.03*: &nbsp;🚀 Launched **AgentReviewers** ([agentreviewers.com](https://agentreviewers.com/)) — a submission and peer-review platform built for AI-generated papers — and open-sourced **[Agent Kernel](https://github.com/JiahaoZhang-Public/agent-kernel)**.
 - *2026.02*: &nbsp;🎉 Our paper **Controlling Repetition in Protein Language Models** was accepted as an **ICLR 2026 Poster**.
 - *2025.08*: &nbsp;🎉 I joined MBZUAI as a phd student in Machine Learning Department, new start point here!
 
@@ -64,15 +67,70 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 *Author marks: `*` indicates single first author, `†` indicates co-first authors, and `✉` indicates corresponding author.*
 
 # 🚀 Projects
-{% for project in site.data.projects %}
-{% include project_item.html project=project %}
-{% endfor %}
+
+<div class="project-carousel" data-project-carousel>
+  <div class="project-carousel__viewport">
+    {% for project in site.data.projects %}
+    <div class="project-carousel__slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}">
+      {% include project_item.html project=project %}
+    </div>
+    {% endfor %}
+  </div>
+  <div class="project-carousel__nav">
+    <button type="button" class="project-carousel__btn" data-direction="prev" aria-label="Previous project">← Prev</button>
+    <span class="project-carousel__counter" data-counter>1 / {{ site.data.projects.size }}</span>
+    <button type="button" class="project-carousel__btn" data-direction="next" aria-label="Next project">Next →</button>
+  </div>
+  <div class="project-carousel__dots" data-dots>
+    {% for project in site.data.projects %}
+    <button type="button" class="project-carousel__dot{% if forloop.first %} is-active{% endif %}" data-dot-index="{{ forloop.index0 }}" aria-label="Go to project {{ forloop.index }}"></button>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+(function () {
+  document.querySelectorAll('[data-project-carousel]').forEach(function (root) {
+    var slides = Array.prototype.slice.call(root.querySelectorAll('.project-carousel__slide'));
+    var dots = Array.prototype.slice.call(root.querySelectorAll('[data-dot-index]'));
+    var counter = root.querySelector('[data-counter]');
+    var prevBtn = root.querySelector('[data-direction="prev"]');
+    var nextBtn = root.querySelector('[data-direction="next"]');
+    var total = slides.length;
+    if (total === 0) return;
+    var idx = 0;
+
+    function render() {
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
+      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
+      if (counter) counter.textContent = (idx + 1) + ' / ' + total;
+      if (prevBtn) prevBtn.disabled = (idx === 0);
+      if (nextBtn) nextBtn.disabled = (idx === total - 1);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { if (idx > 0) { idx--; render(); } });
+    if (nextBtn) nextBtn.addEventListener('click', function () { if (idx < total - 1) { idx++; render(); } });
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function () { idx = i; render(); });
+    });
+
+    // Keyboard support when carousel is focused / hovered
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft' && idx > 0) { idx--; render(); }
+      else if (e.key === 'ArrowRight' && idx < total - 1) { idx++; render(); }
+    });
+
+    render();
+  });
+})();
+</script>
 
 # 🛠 Open Source Tools
 - **MEAP** (**Lead**)  
   [GitHub](https://github.com/JiahaoZhang-Public/MEAP) | [TestPyPI](https://test.pypi.org/project/meap/)
 
 # 🎖 Honors and Awards
+- *2026.02*, MBZUAI Conference Travel Grant.
 - *2024.05*, Cloud Computing Application Award, UCB Data Science Discovery Program.
 - *2023 - 2024*, Undergraduate Academic Excellence Scholarship.
 - *2023.03*, Second Prize, College Student Mathematics Competition (Hubei Division).

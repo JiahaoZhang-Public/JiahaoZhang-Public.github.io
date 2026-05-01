@@ -127,7 +127,18 @@ defaults:
     values:
       layout: default
       author_profile: true
+  # _blog
+  - scope:
+      path: ""
+      type: blog
+    values:
+      layout: default
+      author_profile: false
 
+collections:
+  blog:
+    output: true
+    permalink: /blog/:path/
 
 # Sass/SCSS
 sass:

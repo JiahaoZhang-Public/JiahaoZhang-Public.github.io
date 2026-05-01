@@ -1,3 +1,22 @@
+- title: "Bayesian Gated Non-Negative Contrastive Learning"
+  status: "published"
+  topic: "XAI"
+  venue: "ICML"
+  year: 2026
+  image: "images/projects/icml-bayesncl-cover.png"
+  max_authors: 8
+  placeholder_links: true
+  self_author: "Jiahao Zhang"
+  keywords: "Contrastive Learning, Bayesian Gating, Non-Negative Representations, Interpretability"
+  authors:
+    - name: "Peng Cui"
+      co_first_author: true
+    - name: "Jiahao Zhang"
+      co_first_author: true
+    - name: "Lijie Hu"
+      corresponding_author: true
+  abstract: "Accepted to the Forty-Third International Conference on Machine Learning (ICML 2026). A Bayesian gated non-negative contrastive learning framework that improves the interpretability and reliability of learned representations. Full paper, arXiv preprint, and code release coming soon."
+
 - title: "Controlling Repetition in Protein Language Models"
   status: "published"
   topic: "AI4Sci"
@@ -8,6 +27,7 @@
   pdf: "https://arxiv.org/pdf/2602.00782.pdf"
   arxiv: "https://arxiv.org/abs/2602.00782"
   code: "https://github.com/JiahaoZhang-Public/Controlling-Repetition-in-Protein-Language-Models"
+  project: "https://jiahaozhang-public.github.io/Controlling-Repetition-in-Protein-Language-Models/"
   image: "images/controlling-repetition-plm-cover.png"
   max_authors: 8
   self_author: "Jiahao Zhang"
@@ -31,3 +51,26 @@
       url={https://arxiv.org/abs/2602.00782},
     }
   abstract: "Protein language models (PLMs) frequently collapse into pathological repetition during generation, which undermines structural confidence and functional viability. We present a systematic study of repetition in PLMs and propose Utility-Controlled Contrastive Steering (UCCS), which steers generation using contrastive sets that maximize repetition differences while controlling structural utility. Across ESM-3 and ProtGPT2 on CATH, UniRef50, and SCOP, UCCS reduces repetition without retraining while preserving foldability-related confidence."
+
+- title: "Solar-driven evapofiltration enables co-production of lithium and freshwater from extreme brines"
+  status: "under_review"
+  topic: "AI4Sci"
+  target_venue: "Nature Sustainability"
+  year: 2026
+  code: "https://github.com/JiahaoZhang-Public/GlobalBrine-LithiumModel"
+  image: "images/projects/nature-evapofiltration-cover.png"
+  max_authors: 9
+  self_author: "Jiahao Zhang"
+  keywords: "Brine Chemistry, Lithium Recovery, Solar Energy, Photothermal Membrane, Evapofiltration, AI for Science"
+  authors:
+    - name: "Honglang Lu"
+    - name: "Jiahao Zhang"
+    - name: "Xingxiang Li"
+    - name: "Jing Li"
+    - name: "Yishuo Huang"
+    - name: "Xiaoqin Zhong"
+    - name: "Lijie Hu"
+    - name: "Jun Ma"
+    - name: "Zongyao Zhou"
+      corresponding_author: true
+  abstract: "Brines are an important lithium resource, but their utilization remains limited by poor lithium selectivity in highly saline, magnesium-rich environments and by freshwater scarcity in the arid regions where many such resources occur. Here we report evapofiltration, a separation strategy for simultaneous production of freshwater and lithium from extreme brines. The strategy is realized using an evapofiltration membrane that integrates a commercial nanofiltration membrane with a carbon-nanotube photothermal layer in a recirculating NF evaporator. In Dead Sea brine composition, the system driven by solar sustained freshwater production at 1.24 kg/m^2/h while achieving 320-fold lithium enrichment over four stages, ultimately yielding battery-grade Li2CO3 with 99.58% purity. An experimentally informed artificial-intelligence framework further integrates brine chemistry and local solar conditions to predict site-specific lithium and freshwater production from diverse brine resources worldwide. Evapofiltration therefore provides a promising route for integrated lithium recovery and freshwater generation from extreme brines in water-scarce regions."

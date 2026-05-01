@@ -271,6 +271,14 @@ h1:before, .anchor:before {
     color: #166534;
 }
 
+.pub-link-placeholder {
+    font-size: .92rem;
+    font-weight: 600;
+    color: #94a3b8;
+    cursor: not-allowed;
+    user-select: none;
+}
+
 @include breakpoint($medium) {
     .pub-card {
         flex-direction: row;
@@ -423,5 +431,203 @@ h1:before, .anchor:before {
     .project-card__content {
         width: 50%;
         padding-left: 1rem;
+    }
+}
+
+.project-carousel {
+    margin: 1rem 0 1.5rem 0;
+}
+
+.project-carousel__viewport {
+    position: relative;
+}
+
+.project-carousel__slide {
+    display: none;
+}
+
+.project-carousel__slide.is-active {
+    display: block;
+}
+
+.project-carousel__slide .project-card {
+    margin: 0;
+}
+
+.project-carousel__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    margin-top: .85rem;
+    padding: .5rem .25rem 0 .25rem;
+}
+
+.project-carousel__btn {
+    appearance: none;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #0f172a;
+    font-size: .92rem;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color .15s ease, border-color .15s ease, color .15s ease, transform .15s ease;
+}
+
+.project-carousel__btn:hover:not(:disabled) {
+    background: #0b57d0;
+    border-color: #0b57d0;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.project-carousel__btn:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.project-carousel__counter {
+    flex: 1;
+    text-align: center;
+    font-size: .9rem;
+    font-weight: 600;
+    color: #475569;
+    letter-spacing: .02em;
+}
+
+.project-carousel__dots {
+    display: flex;
+    justify-content: center;
+    gap: .4rem;
+    margin-top: .5rem;
+}
+
+.project-carousel__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color .15s ease, transform .15s ease;
+}
+
+.project-carousel__dot.is-active {
+    background: #0b57d0;
+    transform: scale(1.2);
+}
+
+.blog-directory {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    background:
+        radial-gradient(circle at 10% 0%, rgba(14, 116, 144, 0.12), transparent 40%),
+        radial-gradient(circle at 85% 100%, rgba(12, 74, 110, 0.12), transparent 40%),
+        #f8fafc;
+}
+
+.blog-directory__title {
+    margin: 1rem 0 .75rem 0;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.blog-topic-card {
+    margin: 1rem 0 1.25rem 0;
+    padding: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.blog-topic-card__title {
+    margin: 0 0 .75rem 0;
+    font-size: 1.15rem;
+    border: none;
+    color: #0f172a;
+}
+
+.blog-subtopic-block {
+    margin-top: .85rem;
+    padding-top: .85rem;
+    border-top: 1px dashed #cbd5e1;
+}
+
+.blog-subtopic-block__title {
+    margin: 0 0 .55rem 0;
+    border: none;
+    font-size: 1rem;
+    color: #1e3a8a;
+}
+
+.blog-entry-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: .75rem;
+}
+
+.blog-entry {
+    padding: .85rem .9rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.blog-entry__title {
+    display: inline-block;
+    margin-bottom: .35rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0b57d0;
+    text-decoration: none;
+}
+
+.blog-entry__title:hover {
+    color: #1e3a8a;
+}
+
+.blog-entry__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .45rem;
+    font-size: .83rem;
+    color: #475569;
+}
+
+.blog-entry__pill {
+    display: inline-block;
+    padding: .14rem .52rem;
+    border-radius: 999px;
+    background: #e0f2fe;
+    color: #075985;
+    font-weight: 650;
+}
+
+.blog-entry__excerpt {
+    margin: .45rem 0 0 0;
+    color: #334155;
+}
+
+.blog-empty {
+    margin: 0;
+    font-size: .98rem;
+    color: #334155;
+}
+
+@include breakpoint($small) {
+    .blog-directory {
+        padding: 1.6rem;
+    }
+
+    .blog-entry-list {
+        gap: .9rem;
     }
 }
