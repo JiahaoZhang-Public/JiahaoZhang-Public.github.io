@@ -10,12 +10,10 @@
   {% assign status_class = "under-review" %}
 {% endif %}
 
-{% assign topic_raw = paper.topic | default: "XAI" | downcase %}
-{% assign topic_label = "XAI" %}
-{% assign topic_class = "xai" %}
-{% if topic_raw == "ai4sci" %}
-  {% assign topic_label = "AI4Sci" %}
-  {% assign topic_class = "ai4sci" %}
+{% if paper.topics %}
+  {% assign topic_list = paper.topics %}
+{% else %}
+  {% assign topic_list = paper.topic | default: "XAI" | split: "|" %}
 {% endif %}
 {% assign self_name = paper.self_author | default: site.author.name %}
 {% assign self_first = false %}
@@ -131,7 +129,19 @@
 
     <div class="pub-badges">
       <span class="pub-badge pub-badge--status pub-badge--{{ status_class }}">{{ status_label }}</span>
-      <span class="pub-badge pub-badge--topic pub-badge--topic-{{ topic_class }}">{{ topic_label }}</span>
+      {% for t in topic_list %}
+        {% assign t_raw = t | downcase | strip %}
+        {% if t_raw == "ai4sci" %}
+          {% assign t_label = "AI4Sci" %}{% assign t_class = "ai4sci" %}
+        {% elsif t_raw == "agentic ai" or t_raw == "agentic-ai" %}
+          {% assign t_label = "Agentic AI" %}{% assign t_class = "agentic-ai" %}
+        {% elsif t_raw == "llm" %}
+          {% assign t_label = "LLM" %}{% assign t_class = "llm" %}
+        {% else %}
+          {% assign t_label = "XAI" %}{% assign t_class = "xai" %}
+        {% endif %}
+        <span class="pub-badge pub-badge--topic pub-badge--topic-{{ t_class }}">{{ t_label }}</span>
+      {% endfor %}
       {% if self_first %}
       <span class="pub-badge pub-badge--role">First</span>
       {% endif %}

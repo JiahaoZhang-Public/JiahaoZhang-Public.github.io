@@ -74,3 +74,35 @@
     - name: "Zongyao Zhou"
       corresponding_author: true
   abstract: "Brines are an important lithium resource, but their utilization remains limited by poor lithium selectivity in highly saline, magnesium-rich environments and by freshwater scarcity in the arid regions where many such resources occur. Here we report evapofiltration, a separation strategy for simultaneous production of freshwater and lithium from extreme brines. The strategy is realized using an evapofiltration membrane that integrates a commercial nanofiltration membrane with a carbon-nanotube photothermal layer in a recirculating NF evaporator. In Dead Sea brine composition, the system driven by solar sustained freshwater production at 1.24 kg/m^2/h while achieving 320-fold lithium enrichment over four stages, ultimately yielding battery-grade Li2CO3 with 99.58% purity. An experimentally informed artificial-intelligence framework further integrates brine chemistry and local solar conditions to predict site-specific lithium and freshwater production from diverse brine resources worldwide. Evapofiltration therefore provides a promising route for integrated lithium recovery and freshwater generation from extreme brines in water-scarce regions."
+
+- title: "From Instance Selection to Fixed-Pool Data Recipe Search for Supervised Fine-Tuning"
+  status: "manuscript"
+  topics:
+    - "XAI"
+    - "Agentic AI"
+  year: 2026
+  main_link: "https://arxiv.org/abs/2605.12944"
+  pdf: "https://arxiv.org/pdf/2605.12944.pdf"
+  arxiv: "https://arxiv.org/abs/2605.12944"
+  code: "https://github.com/w253/AutoSelection"
+  image: "images/projects/autoselection-cover.jpg"
+  max_authors: 8
+  self_author: "Jiahao Zhang"
+  keywords: "Supervised Fine-Tuning, Data Selection, Data Recipe Search, Agentic Optimization, LLM Training"
+  authors:
+    - name: "Haodong Wu"
+    - name: "Jiahao Zhang"
+    - name: "Lijie Hu"
+    - name: "Yongqi Zhang"
+      corresponding_author: true
+  bibtex: |
+    @misc{wu2026instanceselection,
+      title={From Instance Selection to Fixed-Pool Data Recipe Search for Supervised Fine-Tuning},
+      author={Haodong Wu and Jiahao Zhang and Lijie Hu and Yongqi Zhang},
+      year={2026},
+      eprint={2605.12944},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2605.12944},
+    }
+  abstract: "Supervised fine-tuning (SFT) data selection is commonly formulated as instance ranking: score each example and retain a top-k subset. However, effective SFT training subsets are often produced through ordered curation recipes, where filtering, mixing, and deduplication operators jointly shape the final data distribution. We formulate this problem as fixed-pool data recipe search: given a raw instruction pool and a library of grounded operators, the goal is to discover an executable recipe that constructs a high-quality selected subset under a limited budget of full SFT evaluations, without generating, rewriting, or augmenting training samples. We introduce AutoSelection, a two-layer solver that decouples fixed-pool materialization based on cached task-, data-, and model-side signals from expensive full evaluation, using warmup probes, realized subset states, local recipe edits, Gaussian-process-assisted ranking, and stagnation-triggered reseeding. Experiments on a 90K instruction pool show that AutoSelection achieves the strongest in-distribution reasoning average across three base models, outperforming full-data training, random recipe search, random top-k, and single-operator selectors."
