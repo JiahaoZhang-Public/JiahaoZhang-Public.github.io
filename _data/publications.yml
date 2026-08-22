@@ -3,9 +3,12 @@
   topic: "XAI"
   venue: "ICML"
   year: 2026
+  main_link: "https://arxiv.org/abs/2605.28441"
+  pdf: "https://arxiv.org/pdf/2605.28441.pdf"
+  arxiv: "https://arxiv.org/abs/2605.28441"
+  code: "https://github.com/Peng-Cui-2003/BayesNCL"
   image: "images/projects/icml-bayesncl-cover.png"
   max_authors: 8
-  placeholder_links: true
   self_author: "Jiahao Zhang"
   keywords: "Contrastive Learning, Bayesian Gating, Non-Negative Representations, Interpretability"
   authors:
@@ -15,7 +18,7 @@
       co_first_author: true
     - name: "Lijie Hu"
       corresponding_author: true
-  abstract: "Accepted to the Forty-Third International Conference on Machine Learning (ICML 2026). A Bayesian gated non-negative contrastive learning framework that improves the interpretability and reliability of learned representations. Full paper, arXiv preprint, and code release coming soon."
+  abstract: "Accepted to the Forty-Third International Conference on Machine Learning (ICML 2026). A Bayesian gated non-negative contrastive learning framework that improves the interpretability and reliability of learned representations."
 
 - title: "Controlling Repetition in Protein Language Models"
   status: "published"
