@@ -76,11 +76,13 @@
   abstract: "Brines are an important lithium resource, but their utilization remains limited by poor lithium selectivity in highly saline, magnesium-rich environments and by freshwater scarcity in the arid regions where many such resources occur. Here we report evapofiltration, a separation strategy for simultaneous production of freshwater and lithium from extreme brines. The strategy is realized using an evapofiltration membrane that integrates a commercial nanofiltration membrane with a carbon-nanotube photothermal layer in a recirculating NF evaporator. In Dead Sea brine composition, the system driven by solar sustained freshwater production at 1.24 kg/m^2/h while achieving 320-fold lithium enrichment over four stages, ultimately yielding battery-grade Li2CO3 with 99.58% purity. An experimentally informed artificial-intelligence framework further integrates brine chemistry and local solar conditions to predict site-specific lithium and freshwater production from diverse brine resources worldwide. Evapofiltration therefore provides a promising route for integrated lithium recovery and freshwater generation from extreme brines in water-scarce regions."
 
 - title: "From Instance Selection to Fixed-Pool Data Recipe Search for Supervised Fine-Tuning"
-  status: "manuscript"
+  status: "published"
   topics:
     - "XAI"
     - "Agentic AI"
+  venue: "EMNLP"
   year: 2026
+  venue_note: "Main Conference"
   main_link: "https://arxiv.org/abs/2605.12944"
   pdf: "https://arxiv.org/pdf/2605.12944.pdf"
   arxiv: "https://arxiv.org/abs/2605.12944"

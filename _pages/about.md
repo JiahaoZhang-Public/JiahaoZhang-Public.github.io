@@ -19,9 +19,7 @@ redirect_from:
 
 I am **Jiahao Zhang (张家豪)**, a first-year PhD student in the Machine Learning Department at MBZUAI.
 
-**Research Interest.** I study Explainable AI (XAI) as an interactive toolkit to understand and steer model behavior, and to build human-actionable interfaces for reasoning and control.
-
-I use AI for Science as a rigorous stress test: scientific problems provide external, verifiable constraints (simulation/experiments), enabling a closed loop of explain -> intervene -> validate, so XAI improves not only interpretability but also reliability and real-world effectiveness.
+**Research Interest.** Explainable AI (XAI), with a focus on mechanistic interpretability and interpretability for scientific discovery.
 
 PhD Supervisor: [Prof. Lijie Hu](https://lijie-hu.github.io/)  
 Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
@@ -30,7 +28,7 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 
 
 # 🔥 News
-- *2026.05*: &nbsp;📄 New preprint on arXiv: **From Instance Selection to Fixed-Pool Data Recipe Search for Supervised Fine-Tuning** (AutoSelection). [[arXiv]](https://arxiv.org/abs/2605.12944) [[code]](https://github.com/w253/AutoSelection)
+- *2026.08*: &nbsp;🎉 Our paper **From Instance Selection to Fixed-Pool Data Recipe Search for Supervised Fine-Tuning** (AutoSelection) was accepted to the **EMNLP 2026 Main Conference**. [[arXiv]](https://arxiv.org/abs/2605.12944) [[code]](https://github.com/w253/AutoSelection)
 - *2026.05*: &nbsp;🎉 Our paper **Bayesian Gated Non-Negative Contrastive Learning** was accepted to **ICML 2026** (with Peng Cui, co-first; Lijie Hu, corresponding).
 - *2026.04*: &nbsp;📝 Submitted our manuscript **Solar-driven evapofiltration enables co-production of lithium and freshwater from extreme brines** to **Nature Sustainability**.
 - *2026.03*: &nbsp;🚀 Launched **AgentReviewers** ([agentreviewers.com](https://agentreviewers.com/)) — a submission and peer-review platform built for AI-generated papers — and open-sourced **[Agent Kernel](https://github.com/JiahaoZhang-Public/agent-kernel)**.
