@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am **Jiahao Zhang (张家豪)**, a first-year PhD student in the Machine Learning Department at MBZUAI.
+I am **Jiahao Zhang (张家豪)**, a second-year PhD student in the Machine Learning Department at MBZUAI.
 
 **Research Interest.** Explainable AI (XAI), with a focus on mechanistic interpretability and interpretability for scientific discovery.
 
