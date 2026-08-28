@@ -29,7 +29,7 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 
 # 🔥 News
 - *2026.08*: &nbsp;🎉 Our paper **From Instance Selection to Fixed-Pool Data Recipe Search for Supervised Fine-Tuning** (AutoSelection) was accepted to the **EMNLP 2026 Main Conference**. [[arXiv]](https://arxiv.org/abs/2605.12944) [[code]](https://github.com/w253/AutoSelection)
-- *2026.05*: &nbsp;🎉 Our paper **Bayesian Gated Non-Negative Contrastive Learning** was accepted to **ICML 2026** (with Peng Cui, co-first; Lijie Hu, corresponding).
+- *2026.05*: &nbsp;🎉 Our paper **Bayesian Gated Non-Negative Contrastive Learning** was accepted to **ICML 2026** (co-first with Peng Cui).
 - *2026.04*: &nbsp;📝 Submitted our manuscript **Solar-driven evapofiltration enables co-production of lithium and freshwater from extreme brines** to **Nature Sustainability**.
 - *2026.03*: &nbsp;🚀 Launched **AgentReviewers** ([agentreviewers.com](https://agentreviewers.com/)) — a submission and peer-review platform built for AI-generated papers — and open-sourced **[Agent Kernel](https://github.com/JiahaoZhang-Public/agent-kernel)**.
 - *2026.02*: &nbsp;🎉 Our paper **Controlling Repetition in Protein Language Models** was accepted as an **ICLR 2026 Poster**.
@@ -63,7 +63,7 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 {% endfor %}
 {% endif %}
 
-*Author marks: `*` indicates single first author, `†` indicates co-first authors, and `✉` indicates corresponding author.*
+*Author mark: `†` indicates co-first authors.*
 
 # 🚀 Projects
 
@@ -147,7 +147,9 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 - *2024.01 - 2024.05*, Data Science Research Intern, Grapedata (UC Berkeley), Berkeley, CA, USA.
 - *2023.10 - 2023.12*, Research Assistant (Remote), AI Lab (Chaowei Xiao), University of Wisconsin-Madison.
 
+# 👨‍🏫 Teaching
+- *Fall 2026*, Teaching Assistant, **Generative AI Memorization**, MBZUAI.
+
 # 🧾 Services
-- Reviewer: ICML 2026
-- Reviewer: ACL Rolling Review (Jan 2026)
-- Reviewer: IEEE Computational Intelligence Magazine (IEEE CIM)
+- **Conference Reviewer:** ICML 2026; NeurIPS 2026; AAAI 2027.
+- **Journal Reviewer:** IEEE Computational Intelligence Magazine (IEEE CIM); Neurocomputing; ACM Transactions on Probabilistic Machine Learning.

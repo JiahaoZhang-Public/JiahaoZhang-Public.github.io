@@ -16,19 +16,11 @@
   {% assign topic_list = paper.topic | default: "XAI" | split: "|" %}
 {% endif %}
 {% assign self_name = paper.self_author | default: site.author.name %}
-{% assign self_first = false %}
 {% assign self_co_first = false %}
-{% assign self_corresponding = false %}
 {% for a in paper.authors %}
   {% if a.name == self_name %}
-    {% if a.first_author %}
-      {% assign self_first = true %}
-    {% endif %}
     {% if a.co_first_author %}
       {% assign self_co_first = true %}
-    {% endif %}
-    {% if a.corresponding_author %}
-      {% assign self_corresponding = true %}
     {% endif %}
   {% endif %}
 {% endfor %}
@@ -40,7 +32,7 @@
 
 {% if paper.authors.size <= max_authors %}
   {% for a in paper.authors %}
-    {% capture marks_raw %}{% if a.co_first_author %}†{% elsif a.first_author %}*{% endif %}{% if a.corresponding_author %}✉{% endif %}{% endcapture %}
+    {% capture marks_raw %}{% if a.co_first_author %}†{% endif %}{% endcapture %}
     {% assign marks = marks_raw | strip %}
     {% capture author_name %}{% if a.name == self_name %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif %}{% if marks != "" %}<sup>{{ marks }}</sup>{% endif %}{% endcapture %}
     {% if author_line == "" %}
@@ -53,7 +45,7 @@
 {% else %}
   {% for a in paper.authors %}
     {% assign required = false %}
-    {% if a.first_author or a.co_first_author or a.corresponding_author %}
+    {% if a.co_first_author %}
       {% assign required = true %}
     {% endif %}
     {% if a.name == self_name %}
@@ -62,7 +54,7 @@
     {% assign token = "|" | append: a.name | append: "|" %}
     {% if required and shown_count < max_authors %}
       {% unless shown_names contains token %}
-        {% capture marks_raw %}{% if a.co_first_author %}†{% elsif a.first_author %}*{% endif %}{% if a.corresponding_author %}✉{% endif %}{% endcapture %}
+        {% capture marks_raw %}{% if a.co_first_author %}†{% endif %}{% endcapture %}
         {% assign marks = marks_raw | strip %}
         {% capture author_name %}{% if a.name == self_name %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif %}{% if marks != "" %}<sup>{{ marks }}</sup>{% endif %}{% endcapture %}
         {% if author_line == "" %}
@@ -80,7 +72,7 @@
     {% assign token = "|" | append: a.name | append: "|" %}
     {% unless shown_names contains token %}
       {% if shown_count < max_authors %}
-        {% capture marks_raw %}{% if a.co_first_author %}†{% elsif a.first_author %}*{% endif %}{% if a.corresponding_author %}✉{% endif %}{% endcapture %}
+        {% capture marks_raw %}{% if a.co_first_author %}†{% endif %}{% endcapture %}
         {% assign marks = marks_raw | strip %}
         {% capture author_name %}{% if a.name == self_name %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif %}{% if marks != "" %}<sup>{{ marks }}</sup>{% endif %}{% endcapture %}
         {% if author_line == "" %}
@@ -142,11 +134,8 @@
         {% endif %}
         <span class="pub-badge pub-badge--topic pub-badge--topic-{{ t_class }}">{{ t_label }}</span>
       {% endfor %}
-      {% if self_first %}
-      <span class="pub-badge pub-badge--role">First</span>
-      {% endif %}
-      {% if self_corresponding %}
-      <span class="pub-badge pub-badge--role">Corresponding</span>
+      {% if self_co_first %}
+      <span class="pub-badge pub-badge--role">Co-first</span>
       {% endif %}
     </div>
 
