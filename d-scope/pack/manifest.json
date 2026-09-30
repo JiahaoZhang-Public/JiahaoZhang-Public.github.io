@@ -1,0 +1,1011 @@
+{
+  "schema": "dscope-studio-pack.v1",
+  "pack_id": "2026-09-29.1",
+  "created_at": "2026-09-29T19:14:52Z",
+  "code": {
+    "d_scope": {
+      "version": "1.0.0"
+    }
+  },
+  "generator": {
+    "environment_id": "sana_student_default",
+    "label": "SANA-Sprint 0.6B",
+    "model": "Efficient-Large-Model/Sana_Sprint_0.6B_1024px_diffusers",
+    "revision": "aa76e7f4f4928f378716b6716a2130fba3caf5b1",
+    "resolution": [
+      1024,
+      1024
+    ],
+    "inference": {
+      "guidance_scale": 4.5,
+      "intermediate_timesteps": 1.3,
+      "max_timesteps": 1.5708,
+      "num_inference_steps": 2
+    },
+    "fixed_batch_size": 16,
+    "noise": "one torch.Generator(device).manual_seed(seed) per row, shared by the baseline and every steered output"
+  },
+  "dictionary": {
+    "id": "l14-mcm-l1",
+    "unit_id": "sana_sprint_0.6b__layer_14__mean_center_mean__vanilla_l1",
+    "label": "Vanilla L1 SAE · mean-centred input · layer 14",
+    "layer": 14,
+    "hook_mode": "block_output",
+    "feature_count": 18432,
+    "checkpoint_sha256": "279f2c059ba7340cb945d77177ce2706bf501508f4561c4db4d73afe399d7078"
+  },
+  "index": {
+    "manifest_sha256": "b85d57bcd7504f18216d14b9893656f02de255750068e23a88ea03bd611118af",
+    "encoder": {
+      "model": "google/siglip2-so400m-patch16-384",
+      "precision": "bf16",
+      "revision": "dd658faac399427308559e2c3ac1e99cbe43845d"
+    },
+    "evidence_per_feature": 64,
+    "centroid": "positive-activation-weighted mean of L2-normalized patch embeddings"
+  },
+  "retrieval": {
+    "strategy": "contrastive",
+    "definition": "SigLIP 2 text embedding of the target minus that of the reference; top-1 cosine match against the visual centroids"
+  },
+  "intervention": {
+    "definition": "the retrieved feature's decoder direction, mapped to the block's residual space, added to every masked token at every denoising step with L2 norm rho * R(t)",
+    "token_grid": [
+      32,
+      32
+    ],
+    "residual_rms_by_step": [
+      363.53167073172597,
+      378.4946259526019
+    ],
+    "calibration_sha256": "546c4d7e0cebaed152fab2ee5abd388d3cc067786edcfca895d6b3a12cecda03"
+  },
+  "scenes": [
+    {
+      "id": "dress-garden",
+      "title": "Dress in a garden",
+      "short": "Dress",
+      "source_prompt": "a woman standing in a garden wearing a dress",
+      "seed": 1,
+      "region": "dress",
+      "thumb": "scenes/dress-garden/thumb.webp",
+      "baseline": {
+        "image": "scenes/dress-garden/baseline.webp",
+        "width": 896,
+        "height": 896,
+        "sha256": "dacd1a20df404498dafb4db51c91f575484d6906d56877a66eb0f8a39f388d05"
+      },
+      "mask": {
+        "image": "scenes/dress-garden/mask.png",
+        "token_mask": "000000000000000000000000000000000000000000000000000000000000000000000000000040000003e0000003e0000003c0000003c0000003e0000003e0000007e0000007e0000003e0000007e000000ff000000ff000000ff000000ff000000ff800000ff800000ff800000ff800000ff800000000000000000000000000",
+        "token_count": 129,
+        "sha256": "797a71cb8fb73ed0378eef4b53648ea1515bcb0a6388387c55752acb3d77096c"
+      },
+      "default_target": "sapphire",
+      "targets": [
+        {
+          "id": "emerald",
+          "label": "Emerald",
+          "query": "emerald green dress",
+          "reference": "dress",
+          "hint": "#2e8b57",
+          "feature": {
+            "key": "l14-mcm-l1-14898",
+            "id": 14898,
+            "dictionary": "l14-mcm-l1",
+            "retrieval_score": 0.009639,
+            "evidence": {
+              "patches": [
+                "features/l14-mcm-l1-14898/patch-0.webp",
+                "features/l14-mcm-l1-14898/patch-1.webp",
+                "features/l14-mcm-l1-14898/patch-2.webp",
+                "features/l14-mcm-l1-14898/patch-3.webp",
+                "features/l14-mcm-l1-14898/patch-4.webp",
+                "features/l14-mcm-l1-14898/patch-5.webp",
+                "features/l14-mcm-l1-14898/patch-6.webp",
+                "features/l14-mcm-l1-14898/patch-7.webp"
+              ],
+              "card": "features/l14-mcm-l1-14898/card.webp",
+              "shown": 8,
+              "total": 64,
+              "positive_image_count": 983
+            }
+          },
+          "default_rho": 0.15,
+          "levels": [
+            {
+              "rho": 0.0,
+              "image": "scenes/dress-garden/baseline.webp",
+              "baseline": true,
+              "zero_check": "pixel-identical"
+            },
+            {
+              "rho": 0.05,
+              "image": "scenes/dress-garden/emerald/rho-0p05.webp",
+              "sha256": "945ba40730d150cf39f0b2f5b89bf04ebefb094b4e5b489c2a6dadb5d190ecba"
+            },
+            {
+              "rho": 0.1,
+              "image": "scenes/dress-garden/emerald/rho-0p1.webp",
+              "sha256": "1877c06df59ea8816eda84ea2bc922367ada0d96015586fd6aae9a42f1d67053"
+            },
+            {
+              "rho": 0.15,
+              "image": "scenes/dress-garden/emerald/rho-0p15.webp",
+              "sha256": "ded8f5319986cfcfccfed7db36a91742e2f6465812fc7c017752a7abe64e1cdd"
+            },
+            {
+              "rho": 0.2,
+              "image": "scenes/dress-garden/emerald/rho-0p2.webp",
+              "sha256": "76457f1336ba82e11ec99b1d8828ea0a10027ff5d780bf5c81cc2f35060ae16d"
+            },
+            {
+              "rho": 0.25,
+              "image": "scenes/dress-garden/emerald/rho-0p25.webp",
+              "sha256": "dba500102a438879ef0767b013d6b0d5cdb46408c601d0f72b17d1309250b750"
+            },
+            {
+              "rho": 0.3,
+              "image": "scenes/dress-garden/emerald/rho-0p3.webp",
+              "sha256": "ea24ea76a7a6252f6d5d2fcf7834c302d97e01bddecc7e1a904c01fffac4437c"
+            },
+            {
+              "rho": 0.4,
+              "image": "scenes/dress-garden/emerald/rho-0p4.webp",
+              "sha256": "c25da2e68402aa9793e548e3066ade5eb37f39165f34c9b167beb7b83ed667ef"
+            }
+          ]
+        },
+        {
+          "id": "golden",
+          "label": "Golden",
+          "query": "golden yellow dress",
+          "reference": "dress",
+          "hint": "#d9a520",
+          "feature": {
+            "key": "l14-mcm-l1-1793",
+            "id": 1793,
+            "dictionary": "l14-mcm-l1",
+            "retrieval_score": 0.004987,
+            "evidence": {
+              "patches": [
+                "features/l14-mcm-l1-1793/patch-0.webp",
+                "features/l14-mcm-l1-1793/patch-1.webp",
+                "features/l14-mcm-l1-1793/patch-2.webp",
+                "features/l14-mcm-l1-1793/patch-3.webp",
+                "features/l14-mcm-l1-1793/patch-4.webp",
+                "features/l14-mcm-l1-1793/patch-5.webp",
+                "features/l14-mcm-l1-1793/patch-6.webp",
+                "features/l14-mcm-l1-1793/patch-7.webp"
+              ],
+              "card": "features/l14-mcm-l1-1793/card.webp",
+              "shown": 8,
+              "total": 64,
+              "positive_image_count": 465
+            }
+          },
+          "default_rho": 0.15,
+          "levels": [
+            {
+              "rho": 0.0,
+              "image": "scenes/dress-garden/baseline.webp",
+              "baseline": true,
+              "zero_check": "pixel-identical"
+            },
+            {
+              "rho": 0.05,
+              "image": "scenes/dress-garden/golden/rho-0p05.webp",
+              "sha256": "251d57ee0a4bf62827b213219985c27478743ab9ad98bc20ce2ee98bbba00852"
+            },
+            {
+              "rho": 0.1,
+              "image": "scenes/dress-garden/golden/rho-0p1.webp",
+              "sha256": "df442d50da3960970b3cf55a755415136f8c5f84cf99df1f23bd892f6a72b950"
+            },
+            {
+              "rho": 0.15,
+              "image": "scenes/dress-garden/golden/rho-0p15.webp",
+              "sha256": "632fec9373234097bf8ab3703c7e28be320b97116d2a706a358b1aa7412e21f1"
+            },
+            {
+              "rho": 0.2,
+              "image": "scenes/dress-garden/golden/rho-0p2.webp",
+              "sha256": "48a4a30e80a7c914b669fdaadffb4a3fcb43b0c4e239612c0771776f21006120"
+            },
+            {
+              "rho": 0.25,
+              "image": "scenes/dress-garden/golden/rho-0p25.webp",
+              "sha256": "bb6a8c62824151a2c76584c667acbbcb4be13dae0132c428418e3bf51ba713f2"
+            },
+            {
+              "rho": 0.3,
+              "image": "scenes/dress-garden/golden/rho-0p3.webp",
+              "sha256": "a9f6577590c92c935c3b303680dd34b581da2880a2164ef47b54726225274f0e"
+            },
+            {
+              "rho": 0.4,
+              "image": "scenes/dress-garden/golden/rho-0p4.webp",
+              "sha256": "18cc00632b6eefac0cb541e3ef02bd9233fe0f0ca6908168d33faa14f5530df4"
+            }
+          ]
+        },
+        {
+          "id": "sapphire",
+          "label": "Sapphire",
+          "query": "sapphire blue dress",
+          "reference": "dress",
+          "hint": "#2250a8",
+          "feature": {
+            "key": "l14-mcm-l1-9768",
+            "id": 9768,
+            "dictionary": "l14-mcm-l1",
+            "retrieval_score": 0.011703,
+            "evidence": {
+              "patches": [
+                "features/l14-mcm-l1-9768/patch-0.webp",
+                "features/l14-mcm-l1-9768/patch-1.webp",
+                "features/l14-mcm-l1-9768/patch-2.webp",
+                "features/l14-mcm-l1-9768/patch-3.webp",
+                "features/l14-mcm-l1-9768/patch-4.webp",
+                "features/l14-mcm-l1-9768/patch-5.webp",
+                "features/l14-mcm-l1-9768/patch-6.webp",
+                "features/l14-mcm-l1-9768/patch-7.webp"
+              ],
+              "card": "features/l14-mcm-l1-9768/card.webp",
+              "shown": 8,
+              "total": 64,
+              "positive_image_count": 1604
+            }
+          },
+          "default_rho": 0.2,
+          "levels": [
+            {
+              "rho": 0.0,
+              "image": "scenes/dress-garden/baseline.webp",
+              "baseline": true,
+              "zero_check": "pixel-identical"
+            },
+            {
+              "rho": 0.05,
+              "image": "scenes/dress-garden/sapphire/rho-0p05.webp",
+              "sha256": "04b51c74669c33e7c022ede8fb3eb98468d3d031974c9ccec7282cc53d09273b"
+            },
+            {
+              "rho": 0.1,
+              "image": "scenes/dress-garden/sapphire/rho-0p1.webp",
+              "sha256": "290df6df286e68e02e050131db91ad804e8ba98d58e956a3cadf23fb30319144"
+            },
+            {
+              "rho": 0.15,
+              "image": "scenes/dress-garden/sapphire/rho-0p15.webp",
+              "sha256": "eb99a7fb0da7ac85d6b9630bf2286a83f9a5d554f4d14a2e86ecd2a04a62f3b9"
+            },
+            {
+              "rho": 0.2,
+              "image": "scenes/dress-garden/sapphire/rho-0p2.webp",
+              "sha256": "364242903d39ef1a1351e93977bb6116422b38b0c7cadf27bbc087eb7c14dc9c"
+            },
+            {
+              "rho": 0.3,
+              "image": "scenes/dress-garden/sapphire/rho-0p3.webp",
+              "sha256": "51cd4dd08907a07f36ebe8ff08d31447338484ce45fefcf52dd7c55f492ff7a3"
+            },
+            {
+              "rho": 0.4,
+              "image": "scenes/dress-garden/sapphire/rho-0p4.webp",
+              "sha256": "38cf86bcb3fa7e57bdb1a9a4b961fb41d2305e6b8dd814ce7c80cc97c97294b6"
+            },
+            {
+              "rho": 0.5,
+              "image": "scenes/dress-garden/sapphire/rho-0p5.webp",
+              "sha256": "5a2a9bce03fb2660519083ee7e8f44057a6f5bfc35b33f686400dbb7fe959fc4"
+            }
+          ]
+        },
+        {
+          "id": "violet",
+          "label": "Violet",
+          "query": "violet dress",
+          "reference": "dress",
+          "hint": "#7b4bb3",
+          "feature": {
+            "key": "l14-mcm-l1-8949",
+            "id": 8949,
+            "dictionary": "l14-mcm-l1",
+            "retrieval_score": 0.03901,
+            "evidence": {
+              "patches": [
+                "features/l14-mcm-l1-8949/patch-0.webp",
+                "features/l14-mcm-l1-8949/patch-1.webp",
+                "features/l14-mcm-l1-8949/patch-2.webp",
+                "features/l14-mcm-l1-8949/patch-3.webp",
+                "features/l14-mcm-l1-8949/patch-4.webp",
+                "features/l14-mcm-l1-8949/patch-5.webp",
+                "features/l14-mcm-l1-8949/patch-6.webp",
+                "features/l14-mcm-l1-8949/patch-7.webp"
+              ],
+              "card": "features/l14-mcm-l1-8949/card.webp",
+              "shown": 8,
+              "total": 64,
+              "positive_image_count": 625
+            }
+          },
+          "default_rho": 0.2,
+          "levels": [
+            {
+              "rho": 0.0,
+              "image": "scenes/dress-garden/baseline.webp",
+              "baseline": true,
+              "zero_check": "pixel-identical"
+            },
+            {
+              "rho": 0.05,
+              "image": "scenes/dress-garden/violet/rho-0p05.webp",
+              "sha256": "ca8fb34c85901c14a75fbba6b052c7df5283d199d7399dd77f1e9fb6c07b551e"
+            },
+            {
+              "rho": 0.1,
+              "image": "scenes/dress-garden/violet/rho-0p1.webp",
+              "sha256": "614f4177c2b4d5b98dbda486cc728fc09b9c36949277bdafe8aa56fb23c40e1e"
+            },
+            {
+              "rho": 0.15,
+              "image": "scenes/dress-garden/violet/rho-0p15.webp",
+              "sha256": "facdb11473dfab5e26d12e4b8d00875356c05f750eeff59f7bca9d7f3ddaa087"
+            },
+            {
+              "rho": 0.2,
+              "image": "scenes/dress-garden/violet/rho-0p2.webp",
+              "sha256": "96255dc72daee1f6c90d4e5cac43574e5843ff2e9c4a499beac40e1abefefc8e"
+            },
+            {
+              "rho": 0.3,
+              "image": "scenes/dress-garden/violet/rho-0p3.webp",
+              "sha256": "24178e07d08af0b100116d5e7d1815b01e021b86e0a7d10e3c02096a0530c012"
+            },
+            {
+              "rho": 0.4,
+              "image": "scenes/dress-garden/violet/rho-0p4.webp",
+              "sha256": "a39c930230d672fe0d3b1ea8dbe8333bd2ff65f2a064e091abea98badafcadfb"
+            },
+            {
+              "rho": 0.5,
+              "image": "scenes/dress-garden/violet/rho-0p5.webp",
+              "sha256": "f4a1aac4cb57607876d78539c846012d3ede2364386fab4e80c1f5c9ad4c3093"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "armchair-study",
+      "title": "Armchair in a study",
+      "short": "Armchair",
+      "source_prompt": "a plain armchair in a study next to a reading lamp",
+      "seed": 1,
+      "region": "armchair",
+      "thumb": "scenes/armchair-study/thumb.webp",
+      "baseline": {
+        "image": "scenes/armchair-study/baseline.webp",
+        "width": 896,
+        "height": 896,
+        "sha256": "bbde9c140c0e3241d832a3ea75d25fb1b1bbd0d3e10f9e75e0a22d551b5ce5e1"
+      },
+      "mask": {
+        "image": "scenes/armchair-study/mask.png",
+        "token_mask": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffc00000ffe00000ffc00000ffc00000ffe00000ffff8000ffff8000ffff00007fff00007fff00007fff00007fff00007fff00007ffe00002fe2000001020000010000000100000",
+        "token_count": 204,
+        "sha256": "549b2657fd993ae87532a5c2fd7b0d9c5b36f55603c4ffbc50d9df3824f3fb30"
+      },
+      "default_target": "leopard",
+      "targets": [
+        {
+          "id": "leopard",
+          "label": "Leopard",
+          "query": "leopard print armchair",
+          "reference": "armchair",
+          "feature": {
+            "key": "l14-mcm-l1-16076",
+            "id": 16076,
+            "dictionary": "l14-mcm-l1",
+            "retrieval_score": 0.055144,
+            "evidence": {
+              "patches": [
+                "features/l14-mcm-l1-16076/patch-0.webp",
+                "features/l14-mcm-l1-16076/patch-1.webp",
+                "features/l14-mcm-l1-16076/patch-2.webp",
+                "features/l14-mcm-l1-16076/patch-3.webp",
+                "features/l14-mcm-l1-16076/patch-4.webp",
+                "features/l14-mcm-l1-16076/patch-5.webp",
+                "features/l14-mcm-l1-16076/patch-6.webp",
+                "features/l14-mcm-l1-16076/patch-7.webp"
+              ],
+              "card": "features/l14-mcm-l1-16076/card.webp",
+              "shown": 8,
+              "total": 64,
+              "positive_image_count": 350
+            }
+          },
+          "default_rho": 0.2,
+          "levels": [
+            {
+              "rho": 0.0,
+              "image": "scenes/armchair-study/baseline.webp",
+              "baseline": true,
+              "zero_check": "pixel-identical"
+            },
+            {
+              "rho": 0.05,
+              "image": "scenes/armchair-study/leopard/rho-0p05.webp",
+              "sha256": "f6f009be675aaf044f391d6d2cf33f68f41a573832c1bd396d11b4a8c9b12296"
+            },
+            {
+              "rho": 0.1,
+              "image": "scenes/armchair-study/leopard/rho-0p1.webp",
+              "sha256": "5e1debc7059129aafce9538bb1facd051f85e072e713d6c6da99ec55fd41c32b"
+            },
+            {
+              "rho": 0.15,
+              "image": "scenes/armchair-study/leopard/rho-0p15.webp",
+              "sha256": "a73a5846f132e25cbffe08d50df3064ae0fd71a47336720f34f39c158cac0cd4"
+            },
+            {
+              "rho": 0.2,
+              "image": "scenes/armchair-study/leopard/rho-0p2.webp",
+              "sha256": "b93c36e097645ae8dcdba3808a5325b84d24eb487310fa751dd978ea3b44caeb"
+            },
+            {
+              "rho": 0.25,
+              "image": "scenes/armchair-study/leopard/rho-0p25.webp",
+              "sha256": "9db44272ea6c7eca768ff104692e98d137e3582a5b928a31af71547e8468a55c"
+            },
+            {
+              "rho": 0.3,
+              "image": "scenes/armchair-study/leopard/rho-0p3.webp",
+              "sha256": "9a75a7e8e91263de05dd2a44846bd05b0dc0389addf9e4560e411207f1bfeace"
+            },
+            {
+              "rho": 0.4,
+              "image": "scenes/armchair-study/leopard/rho-0p4.webp",
+              "sha256": "ca5cef9ff283162f494d83c99ffc31b4a88a94dcaed0a02e1be11c28b5c80644"
+            }
+          ]
+        },
+        {
+          "id": "plaid",
+          "label": "Plaid",
+          "query": "plaid armchair",
+          "reference": "armchair",
+          "feature": {
+            "key": "l14-mcm-l1-530",
+            "id": 530,
+            "dictionary": "l14-mcm-l1",
+            "retrieval_score": 0.051095,
+            "evidence": {
+              "patches": [
+                "features/l14-mcm-l1-530/patch-0.webp",
+                "features/l14-mcm-l1-530/patch-1.webp",
+                "features/l14-mcm-l1-530/patch-2.webp",
+                "features/l14-mcm-l1-530/patch-3.webp",
+                "features/l14-mcm-l1-530/patch-4.webp",
+                "features/l14-mcm-l1-530/patch-5.webp",
+                "features/l14-mcm-l1-530/patch-6.webp",
+                "features/l14-mcm-l1-530/patch-7.webp"
+              ],
+              "card": "features/l14-mcm-l1-530/card.webp",
+              "shown": 8,
+              "total": 64,
+              "positive_image_count": 353
+            }
+          },
+          "default_rho": 0.3,
+          "levels": [
+            {
+              "rho": 0.0,
+              "image": "scenes/armchair-study/baseline.webp",
+              "baseline": true,
+              "zero_check": "pixel-identical"
+            },
+            {
+              "rho": 0.1,
+              "image": "scenes/armchair-study/plaid/rho-0p1.webp",
+              "sha256": "5e0d8c77ce7c80b33be3097b27b260941746d0f45636e9e047fe2fa8cbbda899"
+            },
+            {
+              "rho": 0.15,
+              "image": "scenes/armchair-study/plaid/rho-0p15.webp",
+              "sha256": "23e53771860d0f56101c0c5be190e1c0c013a81838b26646e4223ee4b774909a"
+            },
+            {
+              "rho": 0.2,
+              "image": "scenes/armchair-study/plaid/rho-0p2.webp",
+              "sha256": "514853e52fc2a0649f142e41e3bcb0e2b98729ba06d24fb8151e4838a842b94d"
+            },
+            {
+              "rho": 0.25,
+              "image": "scenes/armchair-study/plaid/rho-0p25.webp",
+              "sha256": "3e96d66571210a30adb90671a294fa43014663fd0884790072e25d3786d6cf95"
+            },
+            {
+              "rho": 0.3,
+              "image": "scenes/armchair-study/plaid/rho-0p3.webp",
+              "sha256": "4774caa7589943bee9ffaf4c3d925771012a4a2582a08d6494eb131d9af352e4"
+            },
+            {
+              "rho": 0.4,
+              "image": "scenes/armchair-study/plaid/rho-0p4.webp",
+              "sha256": "6345be2f8f550758ab306ddf7f65d2bdf45641620c59febf7bb80d1899b02f81"
+            },
+            {
+              "rho": 0.5,
+              "image": "scenes/armchair-study/plaid/rho-0p5.webp",
+              "sha256": "b63ce0e8819e77b98938e99e6a2ae9ee7f303196fc45fea9a69deb2d29183c09"
+            }
+          ]
+        },
+        {
+          "id": "floral",
+          "label": "Floral",
+          "query": "floral armchair",
+          "reference": "armchair",
+          "feature": {
+            "key": "l14-mcm-l1-14140",
+            "id": 14140,
+            "dictionary": "l14-mcm-l1",
+            "retrieval_score": 0.050009,
+            "evidence": {
+              "patches": [
+                "features/l14-mcm-l1-14140/patch-0.webp",
+                "features/l14-mcm-l1-14140/patch-1.webp",
+                "features/l14-mcm-l1-14140/patch-2.webp",
+                "features/l14-mcm-l1-14140/patch-3.webp",
+                "features/l14-mcm-l1-14140/patch-4.webp",
+                "features/l14-mcm-l1-14140/patch-5.webp",
+                "features/l14-mcm-l1-14140/patch-6.webp",
+                "features/l14-mcm-l1-14140/patch-7.webp"
+              ],
+              "card": "features/l14-mcm-l1-14140/card.webp",
+              "shown": 8,
+              "total": 64,
+              "positive_image_count": 109
+            }
+          },
+          "default_rho": 0.35,
+          "levels": [
+            {
+              "rho": 0.0,
+              "image": "scenes/armchair-study/baseline.webp",
+              "baseline": true,
+              "zero_check": "pixel-identical"
+            },
+            {
+              "rho": 0.1,
+              "image": "scenes/armchair-study/floral/rho-0p1.webp",
+              "sha256": "ee6a346193c073f377f8befdda8d288ac513ec571a483bbf45f1efff53fd60dd"
+            },
+            {
+              "rho": 0.2,
+              "image": "scenes/armchair-study/floral/rho-0p2.webp",
+              "sha256": "0f5e7a5b59c93c1e8e20c0bc3fa877970efaebfe11bcaa8c260616095ed5295b"
+            },
+            {
+              "rho": 0.25,
+              "image": "scenes/armchair-study/floral/rho-0p25.webp",
+              "sha256": "610cd929c84eadf6efbe874064b3ff405efc301c5154fb0241b08ef24446cf0c"
+            },
+            {
+              "rho": 0.3,
+              "image": "scenes/armchair-study/floral/rho-0p3.webp",
+              "sha256": "cbd4677c81a64ac71cf8d064fa1133edeaa7d9838289d1054645628360780f93"
+            },
+            {
+              "rho": 0.35,
+              "image": "scenes/armchair-study/floral/rho-0p35.webp",
+              "sha256": "5da388c8c7f4d986f395812025d55ac3648d9494b36479de8b21ded4197b14a6"
+            },
+            {
+              "rho": 0.4,
+              "image": "scenes/armchair-study/floral/rho-0p4.webp",
+              "sha256": "4d2b20a6678935bfacac2386435c34c6d7e2f3d5ad1ee5ac93d6af2ff6a72b40"
+            },
+            {
+              "rho": 0.5,
+              "image": "scenes/armchair-study/floral/rho-0p5.webp",
+              "sha256": "d848dd95ed0b4e8209e84bc0d179d19867ea8f078fc9122ebd993c6b0bb0e3c4"
+            }
+          ]
+        },
+        {
+          "id": "striped",
+          "label": "Striped",
+          "query": "striped armchair",
+          "reference": "armchair",
+          "feature": {
+            "key": "l14-mcm-l1-1980",
+            "id": 1980,
+            "dictionary": "l14-mcm-l1",
+            "retrieval_score": 0.022368,
+            "evidence": {
+              "patches": [
+                "features/l14-mcm-l1-1980/patch-0.webp",
+                "features/l14-mcm-l1-1980/patch-1.webp",
+                "features/l14-mcm-l1-1980/patch-2.webp",
+                "features/l14-mcm-l1-1980/patch-3.webp",
+                "features/l14-mcm-l1-1980/patch-4.webp",
+                "features/l14-mcm-l1-1980/patch-5.webp",
+                "features/l14-mcm-l1-1980/patch-6.webp",
+                "features/l14-mcm-l1-1980/patch-7.webp"
+              ],
+              "card": "features/l14-mcm-l1-1980/card.webp",
+              "shown": 8,
+              "total": 64,
+              "positive_image_count": 567
+            }
+          },
+          "default_rho": 0.4,
+          "levels": [
+            {
+              "rho": 0.0,
+              "image": "scenes/armchair-study/baseline.webp",
+              "baseline": true,
+              "zero_check": "pixel-identical"
+            },
+            {
+              "rho": 0.1,
+              "image": "scenes/armchair-study/striped/rho-0p1.webp",
+              "sha256": "abb56e9aa3e63324dad81d8fd44a9e3723c423be8dc10fa8185c928c32614ce1"
+            },
+            {
+              "rho": 0.2,
+              "image": "scenes/armchair-study/striped/rho-0p2.webp",
+              "sha256": "33f6635d25a73e7ff08e5918b7519b3c5b7d185230ffaf2e3ff539a2cfa88169"
+            },
+            {
+              "rho": 0.25,
+              "image": "scenes/armchair-study/striped/rho-0p25.webp",
+              "sha256": "91480c08f8b4cf97fabea9fc4c37301a33c406ca982692391cdd41e1efae15f0"
+            },
+            {
+              "rho": 0.3,
+              "image": "scenes/armchair-study/striped/rho-0p3.webp",
+              "sha256": "2f48eeaab7e460f119af794156e77e0998cc8b9545047468300dcd8e5c0da712"
+            },
+            {
+              "rho": 0.35,
+              "image": "scenes/armchair-study/striped/rho-0p35.webp",
+              "sha256": "30aae7d7b2187c9983fcb758afbfd4991cd6582b83231ee868034c0af18f9aeb"
+            },
+            {
+              "rho": 0.4,
+              "image": "scenes/armchair-study/striped/rho-0p4.webp",
+              "sha256": "a659d938c96b637c0ce1bd0829e306db428a691269313b593058fb8becac44a3"
+            },
+            {
+              "rho": 0.5,
+              "image": "scenes/armchair-study/striped/rho-0p5.webp",
+              "sha256": "7366c250e1c3af6779b9eff1227bb65ab07b8f1cb00afacc01e1958101d06bdd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "planter-courtyard",
+      "title": "Planter in a courtyard",
+      "short": "Planter",
+      "source_prompt": "a planter with a small olive tree in a courtyard garden",
+      "seed": 0,
+      "region": "planter",
+      "thumb": "scenes/planter-courtyard/thumb.webp",
+      "baseline": {
+        "image": "scenes/planter-courtyard/baseline.webp",
+        "width": 896,
+        "height": 896,
+        "sha256": "73983a08ba51deb178b5caeb9fcf321caf206b0e819b33d243de5244b0935758"
+      },
+      "mask": {
+        "image": "scenes/planter-courtyard/mask.png",
+        "token_mask": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e00038000300300003003000030003c0000003fc3c0001fff80001fff80001fff00001fff0000067f0000000000",
+        "token_count": 95,
+        "sha256": "a6872f585c3e4255361093beaaeef80914df4031b162ea73872fd90a74803d1e"
+      },
+      "default_target": "metal",
+      "targets": [
+        {
+          "id": "metal",
+          "label": "Metal",
+          "query": "metal planter",
+          "reference": "planter",
+          "feature": {
+            "key": "l14-mcm-l1-14875",
+            "id": 14875,
+            "dictionary": "l14-mcm-l1",
+            "retrieval_score": 0.012902,
+            "evidence": {
+              "patches": [
+                "features/l14-mcm-l1-14875/patch-0.webp",
+                "features/l14-mcm-l1-14875/patch-1.webp",
+                "features/l14-mcm-l1-14875/patch-2.webp",
+                "features/l14-mcm-l1-14875/patch-3.webp",
+                "features/l14-mcm-l1-14875/patch-4.webp",
+                "features/l14-mcm-l1-14875/patch-5.webp",
+                "features/l14-mcm-l1-14875/patch-6.webp",
+                "features/l14-mcm-l1-14875/patch-7.webp"
+              ],
+              "card": "features/l14-mcm-l1-14875/card.webp",
+              "shown": 8,
+              "total": 64,
+              "positive_image_count": 2622
+            }
+          },
+          "default_rho": 0.25,
+          "levels": [
+            {
+              "rho": 0.0,
+              "image": "scenes/planter-courtyard/baseline.webp",
+              "baseline": true,
+              "zero_check": "pixel-identical"
+            },
+            {
+              "rho": 0.05,
+              "image": "scenes/planter-courtyard/metal/rho-0p05.webp",
+              "sha256": "93f44e2b7408cb677ee5f77fa83e704d48aa762361ebdf0ca3e008909ad35594"
+            },
+            {
+              "rho": 0.1,
+              "image": "scenes/planter-courtyard/metal/rho-0p1.webp",
+              "sha256": "d7965cd49ea47ac5f1933735499be2f0b349027e88f3a376e687af54eb81701e"
+            },
+            {
+              "rho": 0.15,
+              "image": "scenes/planter-courtyard/metal/rho-0p15.webp",
+              "sha256": "bbb440bbe5caf08a77994f9a106571ed9363c2ee48de9f148d03a2435e437dab"
+            },
+            {
+              "rho": 0.2,
+              "image": "scenes/planter-courtyard/metal/rho-0p2.webp",
+              "sha256": "16bf0dae3f87e14be9374055004bec3b1abd53922b42f07b4e1d786d66a4bc1d"
+            },
+            {
+              "rho": 0.25,
+              "image": "scenes/planter-courtyard/metal/rho-0p25.webp",
+              "sha256": "bd09fcaaf5a7d68c5d4b88c6602b0b9a232f2c378c4f4b140f9833f95956e3b1"
+            },
+            {
+              "rho": 0.3,
+              "image": "scenes/planter-courtyard/metal/rho-0p3.webp",
+              "sha256": "d342bd448692b582c5748c188b00698764527b34444761c6bff6bc389f3adfe2"
+            },
+            {
+              "rho": 0.4,
+              "image": "scenes/planter-courtyard/metal/rho-0p4.webp",
+              "sha256": "4273073a29c39f7a866c18ccb169f03898bbff342bf895727522dc1f8eb11003"
+            }
+          ]
+        },
+        {
+          "id": "wicker",
+          "label": "Wicker",
+          "query": "wicker planter",
+          "reference": "planter",
+          "feature": {
+            "key": "l14-mcm-l1-9647",
+            "id": 9647,
+            "dictionary": "l14-mcm-l1",
+            "retrieval_score": -0.007999,
+            "evidence": {
+              "patches": [
+                "features/l14-mcm-l1-9647/patch-0.webp",
+                "features/l14-mcm-l1-9647/patch-1.webp",
+                "features/l14-mcm-l1-9647/patch-2.webp",
+                "features/l14-mcm-l1-9647/patch-3.webp",
+                "features/l14-mcm-l1-9647/patch-4.webp",
+                "features/l14-mcm-l1-9647/patch-5.webp",
+                "features/l14-mcm-l1-9647/patch-6.webp",
+                "features/l14-mcm-l1-9647/patch-7.webp"
+              ],
+              "card": "features/l14-mcm-l1-9647/card.webp",
+              "shown": 8,
+              "total": 64,
+              "positive_image_count": 436
+            }
+          },
+          "default_rho": 0.25,
+          "levels": [
+            {
+              "rho": 0.0,
+              "image": "scenes/planter-courtyard/baseline.webp",
+              "baseline": true,
+              "zero_check": "pixel-identical"
+            },
+            {
+              "rho": 0.05,
+              "image": "scenes/planter-courtyard/wicker/rho-0p05.webp",
+              "sha256": "6ed361be7a075b9b53e2d41afb8359c44e46ae7f5e68a37a8650b0e016ba126e"
+            },
+            {
+              "rho": 0.1,
+              "image": "scenes/planter-courtyard/wicker/rho-0p1.webp",
+              "sha256": "3e39cf135e0c007ebca52eb815df4b61aac0e7afa15981856709ee01e597b596"
+            },
+            {
+              "rho": 0.15,
+              "image": "scenes/planter-courtyard/wicker/rho-0p15.webp",
+              "sha256": "3df5a9ec94409dabb16d39bd5e6f43a0c3e190eb7bcb246edb91c89deea7e0c2"
+            },
+            {
+              "rho": 0.2,
+              "image": "scenes/planter-courtyard/wicker/rho-0p2.webp",
+              "sha256": "74454825f6ebf18fb9d8286b71129a5a33a934df13ddcffcfd12ab2627ac2b14"
+            },
+            {
+              "rho": 0.25,
+              "image": "scenes/planter-courtyard/wicker/rho-0p25.webp",
+              "sha256": "c92f4185b1ee497212089f761a406f9a3dc15b93ea783de664264b93f261d481"
+            },
+            {
+              "rho": 0.3,
+              "image": "scenes/planter-courtyard/wicker/rho-0p3.webp",
+              "sha256": "840ae315a0f4eefe43a9102fdabf3e9e282c1c08dfdbefef48ca146f2b645649"
+            },
+            {
+              "rho": 0.4,
+              "image": "scenes/planter-courtyard/wicker/rho-0p4.webp",
+              "sha256": "8d0317c8a3192ac0169e94c4d3128e334d46d91bd5ddfd1b1a6bf8683efd0a78"
+            }
+          ]
+        },
+        {
+          "id": "stone",
+          "label": "Stone",
+          "query": "stone planter",
+          "reference": "planter",
+          "feature": {
+            "key": "l14-mcm-l1-3721",
+            "id": 3721,
+            "dictionary": "l14-mcm-l1",
+            "retrieval_score": 0.025728,
+            "evidence": {
+              "patches": [
+                "features/l14-mcm-l1-3721/patch-0.webp",
+                "features/l14-mcm-l1-3721/patch-1.webp",
+                "features/l14-mcm-l1-3721/patch-2.webp",
+                "features/l14-mcm-l1-3721/patch-3.webp",
+                "features/l14-mcm-l1-3721/patch-4.webp",
+                "features/l14-mcm-l1-3721/patch-5.webp",
+                "features/l14-mcm-l1-3721/patch-6.webp",
+                "features/l14-mcm-l1-3721/patch-7.webp"
+              ],
+              "card": "features/l14-mcm-l1-3721/card.webp",
+              "shown": 8,
+              "total": 64,
+              "positive_image_count": 264
+            }
+          },
+          "default_rho": 0.35,
+          "levels": [
+            {
+              "rho": 0.0,
+              "image": "scenes/planter-courtyard/baseline.webp",
+              "baseline": true,
+              "zero_check": "pixel-identical"
+            },
+            {
+              "rho": 0.1,
+              "image": "scenes/planter-courtyard/stone/rho-0p1.webp",
+              "sha256": "a1d59711d78821faecd1409d85cd6f46d9c92f20268e927265d07dea315f1514"
+            },
+            {
+              "rho": 0.2,
+              "image": "scenes/planter-courtyard/stone/rho-0p2.webp",
+              "sha256": "ebb5c3aed2d4c08fe553033998dfe0e90a665fde6b6155c2e25e9acac4fe1cef"
+            },
+            {
+              "rho": 0.25,
+              "image": "scenes/planter-courtyard/stone/rho-0p25.webp",
+              "sha256": "0bf3883c927498b6236ac57685143136046ab53f8a9017bb138a52c03ef5f9ca"
+            },
+            {
+              "rho": 0.3,
+              "image": "scenes/planter-courtyard/stone/rho-0p3.webp",
+              "sha256": "8234084e5b13bf6ceb468ee5c0aabbccd9664a1defe620681ee0ed1d69bb8d75"
+            },
+            {
+              "rho": 0.35,
+              "image": "scenes/planter-courtyard/stone/rho-0p35.webp",
+              "sha256": "4d9ab64b1428cec51af92b5511bc2ca4ecfb808fbe89e7fe4762e7243a96e8eb"
+            },
+            {
+              "rho": 0.4,
+              "image": "scenes/planter-courtyard/stone/rho-0p4.webp",
+              "sha256": "3f6cb1b5d59922b3a2268d6d9a9d81233aa4a3b22789c3358aaed7105862aad8"
+            },
+            {
+              "rho": 0.5,
+              "image": "scenes/planter-courtyard/stone/rho-0p5.webp",
+              "sha256": "6c5a7540219074cc193c1222916dea3ef49877e4fb476d9ac512349d025617c4"
+            }
+          ]
+        },
+        {
+          "id": "copper",
+          "label": "Copper",
+          "query": "copper planter",
+          "reference": "planter",
+          "feature": {
+            "key": "l14-mcm-l1-4367",
+            "id": 4367,
+            "dictionary": "l14-mcm-l1",
+            "retrieval_score": 0.017226,
+            "evidence": {
+              "patches": [
+                "features/l14-mcm-l1-4367/patch-0.webp",
+                "features/l14-mcm-l1-4367/patch-1.webp",
+                "features/l14-mcm-l1-4367/patch-2.webp",
+                "features/l14-mcm-l1-4367/patch-3.webp",
+                "features/l14-mcm-l1-4367/patch-4.webp",
+                "features/l14-mcm-l1-4367/patch-5.webp",
+                "features/l14-mcm-l1-4367/patch-6.webp",
+                "features/l14-mcm-l1-4367/patch-7.webp"
+              ],
+              "card": "features/l14-mcm-l1-4367/card.webp",
+              "shown": 8,
+              "total": 64,
+              "positive_image_count": 839
+            }
+          },
+          "default_rho": 0.35,
+          "levels": [
+            {
+              "rho": 0.0,
+              "image": "scenes/planter-courtyard/baseline.webp",
+              "baseline": true,
+              "zero_check": "pixel-identical"
+            },
+            {
+              "rho": 0.1,
+              "image": "scenes/planter-courtyard/copper/rho-0p1.webp",
+              "sha256": "25712ea98369fd49bc5f770fb45284adcd74d36fe013d6477b2bae2bffe7e9c1"
+            },
+            {
+              "rho": 0.2,
+              "image": "scenes/planter-courtyard/copper/rho-0p2.webp",
+              "sha256": "e67a4fbc04579e9912a11bd1c4d02e431cc47ce91b429b69c0b930f682cadd23"
+            },
+            {
+              "rho": 0.25,
+              "image": "scenes/planter-courtyard/copper/rho-0p25.webp",
+              "sha256": "bd2c109adf001c13249514781552bc071919be03c9918526b1f0b4a8a95c4ef6"
+            },
+            {
+              "rho": 0.3,
+              "image": "scenes/planter-courtyard/copper/rho-0p3.webp",
+              "sha256": "611bd8266584a71e45c7a12bf2041b7d159881fed55e5c2dcc83d1309d35a25e"
+            },
+            {
+              "rho": 0.35,
+              "image": "scenes/planter-courtyard/copper/rho-0p35.webp",
+              "sha256": "471224fc8278c1eca7321eabe93e7cf0b71ded1ab3250d42fe0246319632f132"
+            },
+            {
+              "rho": 0.4,
+              "image": "scenes/planter-courtyard/copper/rho-0p4.webp",
+              "sha256": "e37450a54e657ca66cd31f615406031af283f39f635403937e6f0b3b74490dc4"
+            },
+            {
+              "rho": 0.5,
+              "image": "scenes/planter-courtyard/copper/rho-0p5.webp",
+              "sha256": "77dd53fdf8c123bf39b0d00ea298ed0536b2385e8cac3389d278faeb206fed09"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "zero_strength": "every target's rho = 0 run through the intervention path is pixel-identical to its scene's baseline",
+    "shared_baseline": "all targets of a scene share byte-identical baseline and mask",
+    "single_direction": "every steered output injects exactly one retrieved decoder direction; the feature is the same at every strength of a target",
+    "checked_at": "2026-09-29T19:14:52Z"
+  }
+}
