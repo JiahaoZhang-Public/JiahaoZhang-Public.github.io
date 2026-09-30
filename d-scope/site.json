@@ -1,5 +1,8 @@
 {
-  "film": { "src": "film/d-scope-film.mp4", "poster": "film/poster.webp" },
-  "authors": [],
+  "film": {
+    "src": "film/d-scope-film.mp4",
+    "poster": "film/poster.webp",
+    "light": { "src": "film/d-scope-film-light.mp4", "poster": "film/poster-light.webp" }
+  },
   "links": { "paper": null, "code": null, "live": null }
 }

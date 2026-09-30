@@ -3,8 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#0e1422" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0e1422" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f6f9" media="(prefers-color-scheme: light)" />
+    <script>
+      // Apply a chosen theme before first paint (src/lib/theme.ts); "system" needs no script.
+      (function () {
+        try {
+          var q = new URLSearchParams(location.search).get('theme');
+          var t = q === 'light' || q === 'dark' ? q : localStorage.getItem('dscope-theme');
+          if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
     <meta
       name="description"
       content="D-Scope: decomposing and steering diffusion transformers with sparse autoencoders. Search a feature, steer a generation."
@@ -13,9 +24,9 @@
     <title>
       D-Scope · Decomposing and Steering Diffusion Transformers with Sparse Autoencoders
     </title>
-    <style>html,body{background:#0e1422}</style>
-    <script type="module" crossorigin src="./assets/index-Bb_Ikk8Z.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Zs7fOrYd.css">
+    <style>html,body{background:#0e1422}html[data-theme=light],html[data-theme=light] body{background:#f5f6f9}@media (prefers-color-scheme:light){html:not([data-theme=dark]),html:not([data-theme=dark]) body{background:#f5f6f9}}</style>
+    <script type="module" crossorigin src="./assets/index-DaiOrtMw.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D9bRIsyf.css">
   </head>
   <body>
     <div id="root"></div>
