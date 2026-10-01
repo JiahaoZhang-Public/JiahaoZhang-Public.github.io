@@ -4,5 +4,6 @@
     "poster": "film/poster.webp",
     "light": { "src": "film/d-scope-film-light.mp4", "poster": "film/poster-light.webp" }
   },
-  "links": { "paper": null, "code": null, "live": null }
+  "links": { "paper": "https://arxiv.org/abs/2609.39625", "code": null, "live": null },
+  "analytics": { "goatcounter": "https://dscope.goatcounter.com/count" }
 }
