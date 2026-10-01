@@ -119,6 +119,66 @@ h1:before, .anchor:before {
     background: #ffffff;
 }
 
+.publications-note {
+    color: #64748b;
+    font-size: .92rem;
+}
+
+.pub-entry {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.pub-entry__summary {
+    position: relative;
+    padding: .85rem 1.5rem .85rem 0;
+    cursor: pointer;
+    list-style: none;
+}
+
+.pub-entry__summary::-webkit-details-marker {
+    display: none;
+}
+
+.pub-entry__summary::after {
+    content: "+";
+    position: absolute;
+    top: .85rem;
+    right: .25rem;
+    color: #64748b;
+}
+
+.pub-entry[open] > .pub-entry__summary::after {
+    content: "−";
+}
+
+.pub-entry__title {
+    display: block;
+    color: #0f172a;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.pub-entry__summary:hover .pub-entry__title {
+    color: #0b57d0;
+}
+
+.pub-entry__venue {
+    display: block;
+    margin-top: .2rem;
+    color: #64748b;
+    font-size: .85rem;
+}
+
+.pub-entry[open] > .pub-card {
+    margin-top: 0;
+}
+
+.pub-entry__summary:focus-visible,
+.pub-cover-toggle summary:focus-visible {
+    outline: 2px solid #0b57d0;
+    outline-offset: 3px;
+}
+
 .pub-card__cover img {
     width: 100%;
     box-shadow: 0 2px 8px rgba(15, 23, 42, 0.18);
@@ -137,8 +197,11 @@ h1:before, .anchor:before {
 }
 
 .pub-cover-hint {
+    position: absolute;
+    left: .7rem;
+    bottom: .7rem;
     display: inline-block;
-    margin-top: .4rem;
+    margin: 0;
     font-size: .85rem;
     color: #334155;
     background: rgba(255, 255, 255, 0.92);
@@ -161,6 +224,14 @@ h1:before, .anchor:before {
     border-radius: 0;
     object-fit: cover;
     object-position: center center;
+}
+
+.pub-cover-summary--contain {
+    background: #ffffff;
+}
+
+.pub-cover-summary--contain img {
+    object-fit: contain;
 }
 
 .pub-abstract {
@@ -215,7 +286,8 @@ h1:before, .anchor:before {
     background: #1d4ed8;
 }
 
-.pub-badge--manuscript {
+.pub-badge--manuscript,
+.pub-badge--preprint {
     background: #374151;
 }
 
@@ -307,19 +379,13 @@ h1:before, .anchor:before {
 
     .pub-card__cover {
         width: 50%;
-        min-width: 360px;
+        min-width: 0;
         display: block;
-    }
-
-    .pub-cover-hint {
-        position: absolute;
-        left: .7rem;
-        bottom: .7rem;
-        margin-top: 0;
     }
 
     .pub-card__content {
         width: 50%;
+        min-width: 0;
         padding-left: 1rem;
     }
 }

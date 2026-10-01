@@ -28,6 +28,8 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 
 
 # 🔥 News
+- *2026.10*: &nbsp;📝 Our new preprint **Decomposing and Steering Diffusion Transformers with Sparse Autoencoders** (D-Scope) is now available. Try the interactive demo to explore and steer diffusion transformer features. [[arXiv]](https://arxiv.org/abs/2609.39625) [[demo]](https://jiahaozhang-public.github.io/d-scope/)
+- *2026.10*: &nbsp;🎉 Our paper **How Do Agentic LLMs Decide to Call Tools? A Scaffold Default Controlled by Suppression** was accepted to **NeurIPS 2026**.
 - *2026.08*: &nbsp;🎉 Our paper **From Instance Selection to Fixed-Pool Data Recipe Search for Supervised Fine-Tuning** (AutoSelection) was accepted to the **EMNLP 2026 Main Conference**. [[arXiv]](https://arxiv.org/abs/2605.12944) [[code]](https://github.com/w253/AutoSelection)
 - *2026.05*: &nbsp;🎉 Our paper **Bayesian Gated Non-Negative Contrastive Learning** was accepted to **ICML 2026** (co-first with Peng Cui).
 - *2026.04*: &nbsp;📝 Submitted our manuscript **Solar-driven evapofiltration enables co-production of lithium and freshwater from extreme brines** to **Nature Sustainability**.
@@ -35,33 +37,37 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 - *2026.02*: &nbsp;🎉 Our paper **Controlling Repetition in Protein Language Models** was accepted as an **ICLR 2026 Poster**.
 - *2025.08*: &nbsp;🎉 I joined MBZUAI as a phd student in Machine Learning Department, new start point here!
 
-# 📝 Publications 
+<span class="anchor" id="-publications"></span>
+
+# 📝 Selected Publications
+
+{% assign selected_papers = site.data.publications | where_exp: "paper", "paper.selected_order != nil" | sort: "selected_order" %}
+{% for paper in selected_papers %}
+{% include publication_item.html paper=paper %}
+{% endfor %}
+
+## All Publications
+
+<p class="publications-note">A compact list of all papers. Select a title to expand its details.</p>
 
 {% assign publications_sorted = site.data.publications | sort: "year" | reverse %}
-
-{% assign published_papers = publications_sorted | where: "status", "published" %}
-{% if published_papers.size > 0 %}
+{% assign publication_statuses = "published|preprint|under_review" | split: "|" %}
+{% for status in publication_statuses %}
+{% assign papers = publications_sorted | where: "status", status %}
+{% if papers.size > 0 %}
+{% case status %}
+{% when "published" %}
 ### Published
-{% for paper in published_papers %}
-{% include publication_item.html paper=paper %}
-{% endfor %}
-{% endif %}
-
-{% assign under_review_papers = publications_sorted | where: "status", "under_review" %}
-{% if under_review_papers.size > 0 %}
+{% when "preprint" %}
+### Preprint
+{% when "under_review" %}
 ### Under review
-{% for paper in under_review_papers %}
-{% include publication_item.html paper=paper %}
+{% endcase %}
+{% for paper in papers %}
+{% include publication_item.html paper=paper compact=true %}
 {% endfor %}
 {% endif %}
-
-{% assign manuscript_papers = publications_sorted | where: "status", "manuscript" %}
-{% if manuscript_papers.size > 0 %}
-### Manuscript
-{% for paper in manuscript_papers %}
-{% include publication_item.html paper=paper %}
 {% endfor %}
-{% endif %}
 
 *Author mark: `†` indicates co-first authors.*
 

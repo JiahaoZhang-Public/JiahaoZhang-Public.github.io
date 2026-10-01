@@ -5,6 +5,9 @@
 {% if status_key == "published" %}
   {% assign status_label = "Published" %}
   {% assign status_class = "published" %}
+{% elsif status_key == "preprint" %}
+  {% assign status_label = "Preprint" %}
+  {% assign status_class = "preprint" %}
 {% elsif status_key == "under_review" %}
   {% assign status_label = "Under review" %}
   {% assign status_class = "under-review" %}
@@ -94,6 +97,8 @@
 {% capture venue_line %}
 {% if status_key == "published" %}
 {{ paper.venue }}{% if paper.year %} {{ paper.year }}{% endif %}{% if paper.venue_note %} · {{ paper.venue_note }}{% endif %}
+{% elsif status_key == "preprint" %}
+arXiv{% if paper.year %} · {{ paper.year }}{% endif %}
 {% elsif status_key == "under_review" %}
 {% if paper.target_venue %}Submitted to: {{ paper.target_venue }}{% if paper.year %} {{ paper.year }}{% endif %}{% else %}Preprint / under review{% endif %}
 {% else %}
@@ -101,12 +106,20 @@
 {% endif %}
 {% endcapture %}
 {% assign card_id = paper.title | slugify %}
+{% if include.compact %}
+{% assign card_id = card_id | append: "-list" %}
+<details class="pub-entry">
+  <summary class="pub-entry__summary">
+    <span class="pub-entry__title">{{ paper.title }}</span>
+    <span class="pub-entry__venue">{{ venue_line | strip }}</span>
+  </summary>
+{% endif %}
 
 <article class="pub-card">
   <div class="pub-card__cover">
     <details class="pub-cover-toggle">
-      <summary class="pub-cover-summary">
-        <img src="{{ paper.image | default: 'images/500x300.png' }}" alt="{{ paper.title }} cover" />
+      <summary class="pub-cover-summary{% if paper.image_fit == 'contain' %} pub-cover-summary--contain{% endif %}">
+        <img src="{{ paper.image | default: 'images/500x300.png' | relative_url }}" alt="{{ paper.title }} cover" loading="lazy" />
         <span class="pub-cover-hint">Click cover to view abstract</span>
       </summary>
       <div class="pub-abstract">
@@ -162,3 +175,6 @@
     {% endif %}
   </div>
 </article>
+{% if include.compact %}
+</details>
+{% endif %}

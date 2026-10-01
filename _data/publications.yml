@@ -1,4 +1,5 @@
 - title: "Bayesian Gated Non-Negative Contrastive Learning"
+  selected_order: 3
   status: "published"
   topic: "XAI"
   venue: "ICML"
@@ -21,6 +22,7 @@
   abstract: "Accepted to the Forty-Third International Conference on Machine Learning (ICML 2026). A Bayesian gated non-negative contrastive learning framework that improves the interpretability and reliability of learned representations."
 
 - title: "Controlling Repetition in Protein Language Models"
+  selected_order: 2
   status: "published"
   topic: "AI4Sci"
   venue: "ICLR"
@@ -111,3 +113,62 @@
       url={https://arxiv.org/abs/2605.12944},
     }
   abstract: "Supervised fine-tuning (SFT) data selection is commonly formulated as instance ranking: score each example and retain a top-k subset. However, effective SFT training subsets are often produced through ordered curation recipes, where filtering, mixing, and deduplication operators jointly shape the final data distribution. We formulate this problem as fixed-pool data recipe search: given a raw instruction pool and a library of grounded operators, the goal is to discover an executable recipe that constructs a high-quality selected subset under a limited budget of full SFT evaluations, without generating, rewriting, or augmenting training samples. We introduce AutoSelection, a two-layer solver that decouples fixed-pool materialization based on cached task-, data-, and model-side signals from expensive full evaluation, using warmup probes, realized subset states, local recipe edits, Gaussian-process-assisted ranking, and stagnation-triggered reseeding. Experiments on a 90K instruction pool show that AutoSelection achieves the strongest in-distribution reasoning average across three base models, outperforming full-data training, random recipe search, random top-k, and single-operator selectors."
+
+- title: "Decomposing and Steering Diffusion Transformers with Sparse Autoencoders"
+  selected_order: 1
+  status: "preprint"
+  topic: "XAI"
+  year: 2026
+  main_link: "https://arxiv.org/abs/2609.39625"
+  pdf: "https://arxiv.org/pdf/2609.39625"
+  arxiv: "https://arxiv.org/abs/2609.39625"
+  project: "https://jiahaozhang-public.github.io/d-scope/"
+  image: "images/projects/d-scope-cover.jpg"
+  image_fit: "contain"
+  self_author: "Jiahao Zhang"
+  keywords: "Diffusion Transformers, Sparse Autoencoders, Mechanistic Interpretability, Visual Steering"
+  authors:
+    - name: "Xinyue Xu"
+      co_first_author: true
+    - name: "Jiahao Zhang"
+      co_first_author: true
+    - name: "Lijie Hu"
+      corresponding_author: true
+    - name: "Peter Hase"
+    - name: "Hao Wang"
+      corresponding_author: true
+  bibtex: |
+    @misc{xu2026dscopedecomposingsteeringdiffusion,
+      title={D-Scope: Decomposing and Steering Diffusion Transformers with Sparse Autoencoders},
+      author={Xinyue Xu and Jiahao Zhang and Lijie Hu and Peter Hase and Hao Wang},
+      year={2026},
+      eprint={2609.39625},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2609.39625},
+    }
+  abstract: "D-Scope connects the interpretation of sparse autoencoder features to generation control in diffusion transformers. It retrieves features from text queries using visual evidence from highly activating image patches, then tests their decoder directions through spatially masked interventions. A study of 150 SAEs across two model families and five layers, together with a benchmark of 100 target concepts, examines reconstruction, feature utilization, visual coverage, and steering effects."
+
+- title: "How Do Agentic LLMs Decide to Call Tools? A Scaffold Default Controlled by Suppression."
+  status: "published"
+  topics:
+    - "XAI"
+    - "Agentic AI"
+  venue: "NeurIPS"
+  year: 2026
+  image: "images/projects/neurips-tool-calling-cover.png"
+  image_fit: "contain"
+  self_author: "Jiahao Zhang"
+  keywords: "Tool Calling, Agentic LLMs, Mechanistic Interpretability"
+  authors:
+    - name: "Xijie Gong"
+      co_first_author: true
+    - name: "Tingxu Han"
+      co_first_author: true
+    - name: "Jiahao Zhang"
+    - name: "Wei Song"
+    - name: "Ziqi Ding"
+    - name: "Hanqi Yan"
+    - name: "Youcheng Sun"
+    - name: "Lijie Hu"
+  abstract: "How do agentic LLMs decide whether to call a tool? Controlled prompt pairs isolate the effect of a single request verb, revealing a compact tool-call direction that is causally necessary and sufficient for the decision. Mechanistic analysis shows that the prompt scaffold establishes tool calling as the default, while analysis verbs activate features that suppress it. This mechanism generalizes across model scales and families."
