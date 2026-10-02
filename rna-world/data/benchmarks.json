@@ -1,0 +1,1 @@
+{"headline":[{"big":"#1","what":"Zero-shot fitness prediction","fine":"Across 31 non-coding RNA fitness assays (RNAGym), with no task-specific training"},{"big":"48×","what":"smaller than the next-best model","fine":"Same benchmark, same scoring"},{"big":"12,288","what":"interpretable concepts","fine":"A dictionary of what the model has learned"}]}
