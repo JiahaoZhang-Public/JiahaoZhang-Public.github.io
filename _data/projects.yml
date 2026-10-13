@@ -1,3 +1,18 @@
+- title: "ComputeDeck"
+  role: "lead"
+  period: "2026-present"
+  category: "Research Tools"
+  topic: "Research Compute Dashboard"
+  status: "active"
+  summary: "A personal dashboard for jobs, queue reasons and GPU capacity across clusters, cloud accounts and SSH machines. Public release in preparation."
+  tags:
+    - "Research Tools"
+    - "Slurm"
+    - "GPU"
+    - "Python"
+  cover: "computedeck/assets/social-preview.jpg"
+  web: "https://jiahaozhang-public.github.io/computedeck/"
+
 - title: "AgentReviewers"
   role: "lead"
   period: "2026-present"
