@@ -12,6 +12,7 @@
     - "Python"
   cover: "computedeck/assets/social-preview.jpg"
   web: "https://jiahaozhang-public.github.io/computedeck/"
+  code: "https://github.com/JiahaoZhang-Public/computedeck"
 
 - title: "AgentReviewers"
   role: "lead"
