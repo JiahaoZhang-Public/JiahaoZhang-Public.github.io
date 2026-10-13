@@ -1,0 +1,22 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:02.340
+Meet ComputeDeck.
+
+00:00:02.340 --> 00:00:05.400
+See your clusters and cloud GPUs in one place.
+
+00:00:05.400 --> 00:00:08.000
+Open a queued job to understand the wait.
+
+00:00:08.000 --> 00:00:10.000
+Then choose your GPU needs
+
+00:00:10.000 --> 00:00:12.900
+and compare capacity, permissions, and time limits.
+
+00:00:12.900 --> 00:00:16.200
+Read-only by default, with your existing SSH setup.
+
+00:00:16.200 --> 00:00:18.200
+This walkthrough uses example data.
