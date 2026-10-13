@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ComputeDeck — Your compute. One clear view.</title>
+    <title>ComputeDeck — Jobs, queues and GPUs</title>
     <meta
       name="description"
-      content="A personal dashboard for research compute. See jobs, queue reasons, cluster capacity and cloud GPUs together, using your existing SSH setup."
+      content="A dashboard for Slurm jobs, cloud GPUs and SSH machines. Check job status, queue reasons and available capacity using your existing accounts."
     />
     <meta name="theme-color" content="#171a31" />
     <link
@@ -15,13 +15,10 @@
     />
     <link rel="icon" type="image/svg+xml" href="assets/computedeck-mark.svg" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="ComputeDeck — Your compute. One clear view."
-    />
+    <meta property="og:title" content="ComputeDeck — Jobs, queues and GPUs" />
     <meta
       property="og:description"
-      content="Jobs, queues and GPU capacity across your clusters and cloud accounts. Watch the 20-second example-data demo."
+      content="A dashboard for clusters, cloud instances and SSH machines. Watch a 20-second demo with example data."
     />
     <meta
       property="og:url"
@@ -47,102 +44,57 @@
         />Compute<span>Deck</span></a
       >
       <nav aria-label="Main navigation">
-        <a href="#workflow">How it works</a>
+        <a href="#workflow">Features</a>
         <a href="#demo">Demo <span class="nav-time">20s</span></a>
-        <a href="#availability" class="nav-status"
-          >Release status <span aria-hidden="true">↗</span></a
-        >
+        <a href="#availability" class="nav-status">Status</a>
       </nav>
     </header>
     <main id="main">
       <section class="hero wrap" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">
-            <span class="status-dot"></span> A personal dashboard for research
-            compute
-          </p>
-          <h1 id="hero-title">
-            Your compute.<br /><span>One clear view.</span>
-          </h1>
+          <p class="eyebrow"><span class="status-dot"></span> Preview</p>
+          <h1 id="hero-title"><span>ComputeDeck</span></h1>
           <p class="hero-description">
-            Follow your jobs. Understand the queue.<br />Find room for what
-            comes next.
+            A dashboard for jobs,<br />queues and GPUs.
           </p>
           <p class="hero-detail">
-            ComputeDeck brings your clusters, cloud GPUs and SSH machines
-            together, using the connections you already have.
+            Uses your SSH aliases and cloud accounts. No cluster administrator
+            access needed.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#demo"
-              ><span aria-hidden="true">▶</span> Watch the 20-second demo</a
+              ><span aria-hidden="true">▶</span> Watch demo · 20s</a
             ><a class="text-link" href="#workflow"
-              >Explore the workflow <span aria-hidden="true">↓</span></a
+              >Features <span aria-hidden="true">↓</span></a
             >
           </div>
           <p class="hero-note">
-            macOS & Linux <span>·</span> Read-only collection <span>·</span> No
-            cluster-side agent
+            macOS & Linux <span>·</span> Read-only collection
+            <span>·</span> English & 中文
           </p>
         </div>
         <div class="hero-visual">
           <div class="visual-label">
-            <span class="status-dot"></span> ONE PLACE TO CHECK IN
-            <span class="example-label">EXAMPLE DATA</span>
+            OVERVIEW <span class="example-label">EXAMPLE DATA</span>
           </div>
           <img
             src="assets/overview.jpg"
             width="1280"
             height="720"
-            alt="ComputeDeck overview with fictional Cluster A, Cluster B and cloud resources, GPU counts and usage history"
+            alt="Overview of fictional clusters, cloud instances and GPU usage"
             fetchpriority="high"
           />
           <div class="visual-caption">
-            <span>Across accounts. Across machines.</span
-            ><span>With the missing pieces clearly marked.</span>
+            <span>Clusters, cloud instances and SSH machines.</span>
           </div>
-        </div>
-      </section>
-
-      <section
-        class="principles wrap"
-        aria-label="Built for your existing workflow"
-      >
-        <div>
-          <span class="principle-number">01</span>
-          <p>
-            <strong>Your existing SSH setup</strong
-            ><span>Keep your aliases, keys and jump hosts.</span>
-          </p>
-        </div>
-        <div>
-          <span class="principle-number">02</span>
-          <p>
-            <strong>An ordinary cluster account</strong
-            ><span>No administrator access required.</span>
-          </p>
-        </div>
-        <div>
-          <span class="principle-number">03</span>
-          <p>
-            <strong>Clear about what is known</strong
-            ><span>Unknown and stale data stay visible.</span>
-          </p>
         </div>
       </section>
 
       <section id="demo" class="demo-section" aria-labelledby="demo-title">
         <div class="wrap">
           <div class="section-heading">
-            <div>
-              <p class="eyebrow">A QUICK WALKTHROUGH</p>
-              <h2 id="demo-title">
-                From “what’s running?”<br />to “where next?”
-              </h2>
-            </div>
-            <p>
-              Twenty seconds inside ComputeDeck.<br />Real interface. Fictional
-              resources.
-            </p>
+            <h2 id="demo-title">20-second demo</h2>
+            <p>Overview → queued job → GPU options</p>
           </div>
           <div class="player">
             <video
@@ -152,7 +104,7 @@
               poster="assets/demo-poster.jpg"
               width="1920"
               height="1080"
-              aria-label="ComputeDeck 20-second example-data walkthrough"
+              aria-label="ComputeDeck example-data demo"
               aria-describedby="demo-note"
             >
               <source src="assets/computedeck-demo.mp4" type="video/mp4" />
@@ -162,24 +114,20 @@
                 srclang="en"
                 label="English"
               />
-              Your browser does not support embedded video.
               <a href="assets/computedeck-demo.mp4">Download the demo</a>.
             </video>
             <button class="play-demo" type="button" hidden>
-              <span aria-hidden="true">▶</span> Play the 20-second demo
+              <span aria-hidden="true">▶</span> Play demo
             </button>
           </div>
           <div class="demo-meta" id="demo-note">
-            <p>
-              All names, jobs and numbers are example data. AI-generated English
-              voiceover.
-            </p>
+            <p>Example data · English AI voiceover and captions</p>
             <a href="assets/computedeck-demo.mp4" download
               >Download MP4 <span aria-hidden="true">↓</span></a
             >
           </div>
           <details class="transcript">
-            <summary>Read the transcript</summary>
+            <summary>Transcript</summary>
             <p>
               Meet ComputeDeck. See your clusters and cloud GPUs in one place.
               Open a queued job to understand the wait. Then choose your GPU
@@ -197,26 +145,14 @@
         aria-labelledby="workflow-title"
       >
         <div class="section-heading">
-          <div>
-            <p class="eyebrow">BUILT AROUND THE QUESTIONS YOU ASK</p>
-            <h2 id="workflow-title">Less checking.<br />More understanding.</h2>
-          </div>
-          <p>
-            A view of the resources available to you,<br />without a pile of
-            terminal tabs.
-          </p>
+          <h2 id="workflow-title">Jobs and capacity</h2>
         </div>
         <article class="feature-row">
           <div class="feature-copy">
-            <p class="step">01 / FOLLOW YOUR WORK</p>
-            <h3>What’s running.<br />What’s waiting. Why.</h3>
+            <h3>Inspect a queued job</h3>
             <p>
-              See running, queued and recently failed jobs across cluster
-              logins. Open a job for its requested GPUs, account, QoS and the
+              Open a job to see its GPU request, account, QoS and the
               scheduler’s pending reason.
-            </p>
-            <p class="detail-note">
-              The same job seen through two logins is counted once.
             </p>
           </div>
           <figure>
@@ -225,25 +161,21 @@
               width="1280"
               height="720"
               loading="lazy"
-              alt="A fictional queued job requesting four A100 GPUs, with its Slurm pending reason and account details"
+              alt="Details of a fictional queued job requesting four A100 GPUs"
             />
-            <figcaption>
-              Example: inspect a queued job without leaving the dashboard.
-            </figcaption>
+            <figcaption>Queued job details · example data</figcaption>
           </figure>
         </article>
         <article class="feature-row reverse">
           <div class="feature-copy">
-            <p class="step">02 / PLAN THE NEXT RUN</p>
-            <h3>Match your next job<br />to visible capacity.</h3>
+            <h3>Compare GPU options</h3>
             <p>
-              Choose a GPU model, a GPU count and a run time. Compare collected
-              node capacity, verified QoS access and limits across your cluster
-              accounts.
+              Enter a GPU model, count and run time. Compare visible capacity
+              and verified QoS limits.
             </p>
             <p class="detail-note">
-              An estimate from the last collection. Scheduler priorities and
-              reservations can still delay a job.
+              Estimates use the last collection. Reservations and priorities can
+              still delay a job.
             </p>
           </div>
           <figure>
@@ -252,51 +184,36 @@
               width="1280"
               height="720"
               loading="lazy"
-              alt="Example comparison for four H100 GPUs over 24 hours, showing suitable options, time limits and unavailable GPU models"
+              alt="Options for four H100 GPUs over 24 hours, with capacity and run-time limits"
             />
-            <figcaption>Example: compare a 4 × H100, 24-hour run.</figcaption>
+            <figcaption>4 × H100 for 24 hours · example data</figcaption>
           </figure>
         </article>
       </section>
 
       <section class="connections wrap" aria-labelledby="connections-title">
         <div>
-          <p class="eyebrow">BRING YOUR OWN RESOURCES</p>
-          <h2 id="connections-title">
-            One dashboard.<br />Your kind of compute.
-          </h2>
+          <h2 id="connections-title">Supported sources</h2>
           <p>
-            Collect on your laptop, or keep collecting on an always-on machine
-            and connect through an SSH tunnel.
+            Collect on your laptop, or run on a server and connect through SSH.
           </p>
         </div>
         <dl class="provider-list">
           <div>
             <dt>Clusters</dt>
-            <dd>
-              Slurm
-              <span class="provider-secondary">· Kubernetes · PBS · LSF</span>
-            </dd>
+            <dd>Slurm · Kubernetes · PBS · LSF</dd>
           </div>
           <div>
             <dt>Cloud GPUs</dt>
-            <dd>
-              RunPod · Lambda · AWS EC2
-              <span class="provider-secondary">· Vast.ai</span>
-            </dd>
+            <dd>RunPod · Lambda · AWS EC2 · Vast.ai</dd>
           </div>
           <div>
-            <dt>Your machines</dt>
+            <dt>Other machines</dt>
             <dd>GPU hosts over SSH · Manual entries</dd>
-          </div>
-          <div>
-            <dt>Make it yours</dt>
-            <dd>English & Chinese · Optional tools & plugins</dd>
           </div>
         </dl>
         <p class="beta-note">
-          Kubernetes, PBS, LSF and Vast.ai integrations are beta. Available data
-          depends on the permissions of your account.
+          Kubernetes, PBS, LSF and Vast.ai integrations are beta.
         </p>
       </section>
 
@@ -306,25 +223,11 @@
         aria-labelledby="availability-title"
       >
         <div>
-          <p class="eyebrow">
-            <span class="status-dot"></span> RELEASE PREVIEW
-          </p>
-          <h2 id="availability-title">
-            A clearer view<br />of your research compute.
-          </h2>
+          <h2 id="availability-title">Release status</h2>
           <p>
-            ComputeDeck is preparing for its first public release. The source
-            repositories remain private, and packages are not yet available on
-            PyPI.
-          </p>
-          <p>
-            This page is a product preview. The demo runs entirely on fictional
-            data.
+            Source access is currently private. Packages are not on PyPI yet.
           </p>
         </div>
-        <a class="button primary" href="#demo"
-          >Take the 20-second tour <span aria-hidden="true">↗</span></a
-        >
       </section>
     </main>
     <footer class="wrap">
@@ -335,11 +238,7 @@
           height="24"
           alt=""
         />Compute<span>Deck</span></a
-      >
-      <p>Made for the work between runs.</p>
-      <a href="/"
-        >Back to personal homepage <span aria-hidden="true">↗</span></a
-      >
+      ><a href="/">Personal homepage <span aria-hidden="true">↗</span></a>
     </footer>
   </body>
 </html>

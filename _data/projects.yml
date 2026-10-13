@@ -4,7 +4,7 @@
   category: "Research Tools"
   topic: "Research Compute Dashboard"
   status: "active"
-  summary: "A personal dashboard for jobs, queue reasons and GPU capacity across clusters, cloud accounts and SSH machines. Public release in preparation."
+  summary: "A dashboard for Slurm jobs, cloud GPUs and SSH machines."
   tags:
     - "Research Tools"
     - "Slurm"
