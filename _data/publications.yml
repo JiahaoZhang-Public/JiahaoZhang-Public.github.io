@@ -156,6 +156,10 @@
     - "Agentic AI"
   venue: "NeurIPS"
   year: 2026
+  main_link: "https://arxiv.org/abs/2610.09624"
+  pdf: "https://arxiv.org/pdf/2610.09624"
+  arxiv: "https://arxiv.org/abs/2610.09624"
+  code: "https://github.com/XijieGo/MI4ToolCalling"
   image: "images/projects/neurips-tool-calling-cover.png"
   image_fit: "contain"
   self_author: "Jiahao Zhang"

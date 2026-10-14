@@ -17,9 +17,9 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am **Jiahao Zhang (张家豪)**, a second-year PhD student in the Machine Learning Department at MBZUAI.
+I am **Jiahao Zhang (张家豪)**, a PhD student in the Machine Learning Department at MBZUAI.
 
-**Research Interest.** Explainable AI (XAI), with a focus on mechanistic interpretability and interpretability for scientific discovery.
+**Research Interests.** Machine Learning, Large Language Models & Foundation Models, Interpretable AI & Alignment, Mechanistic Interpretability, Foundation Models for Life Sciences.
 
 PhD Supervisor: [Prof. Lijie Hu](https://lijie-hu.github.io/)  
 Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
@@ -29,7 +29,7 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 
 # 🔥 News
 - *2026.10*: &nbsp;📝 Our new preprint **Decomposing and Steering Diffusion Transformers with Sparse Autoencoders** (D-Scope) is now available. Try the interactive demo to explore and steer diffusion transformer features. [[arXiv]](https://arxiv.org/abs/2609.39625) [[demo]](https://jiahaozhang-public.github.io/d-scope/)
-- *2026.10*: &nbsp;🎉 Our paper **How Do Agentic LLMs Decide to Call Tools? A Scaffold Default Controlled by Suppression** was accepted to **NeurIPS 2026**.
+- *2026.10*: &nbsp;🎉 Our paper **How Do Agentic LLMs Decide to Call Tools? A Scaffold Default Controlled by Suppression** was accepted to **NeurIPS 2026**. [[arXiv]](https://arxiv.org/abs/2610.09624) [[code]](https://github.com/XijieGo/MI4ToolCalling)
 - *2026.08*: &nbsp;🎉 Our paper **From Instance Selection to Fixed-Pool Data Recipe Search for Supervised Fine-Tuning** (AutoSelection) was accepted to the **EMNLP 2026 Main Conference**. [[arXiv]](https://arxiv.org/abs/2605.12944) [[code]](https://github.com/w253/AutoSelection)
 - *2026.05*: &nbsp;🎉 Our paper **Bayesian Gated Non-Negative Contrastive Learning** was accepted to **ICML 2026** (co-first with Peng Cui).
 - *2026.04*: &nbsp;📝 Submitted our manuscript **Solar-driven evapofiltration enables co-production of lithium and freshwater from extreme brines** to **Nature Sustainability**.
@@ -157,5 +157,5 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 - *Fall 2026*, Teaching Assistant, **Generative AI Memorization**, MBZUAI.
 
 # 🧾 Services
-- **Conference Reviewer:** ICML 2026; NeurIPS 2026; AAAI 2027.
+- **Conference Reviewer:** ICML 2026; NeurIPS 2026; AAAI 2027; ICLR 2027.
 - **Journal Reviewer:** IEEE Computational Intelligence Magazine (IEEE CIM); Neurocomputing; ACM Transactions on Probabilistic Machine Learning.
