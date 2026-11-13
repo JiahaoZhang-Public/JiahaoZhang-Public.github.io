@@ -28,11 +28,11 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 
 
 # 🔥 News
+- *2026.11*: &nbsp;🎉 Our paper **Solar-driven evapofiltration enables co-production of lithium and freshwater from extreme brines** is now published in **Water Research**. [[paper]](https://www.sciencedirect.com/science/article/abs/pii/S0043135426020105)
 - *2026.10*: &nbsp;📝 Our new preprint **Decomposing and Steering Diffusion Transformers with Sparse Autoencoders** (D-Scope) is now available. Try the interactive demo to explore and steer diffusion transformer features. [[arXiv]](https://arxiv.org/abs/2609.39625) [[demo]](https://jiahaozhang-public.github.io/d-scope/)
 - *2026.10*: &nbsp;🎉 Our paper **How Do Agentic LLMs Decide to Call Tools? A Scaffold Default Controlled by Suppression** was accepted to **NeurIPS 2026**. [[arXiv]](https://arxiv.org/abs/2610.09624) [[code]](https://github.com/XijieGo/MI4ToolCalling)
 - *2026.08*: &nbsp;🎉 Our paper **From Instance Selection to Fixed-Pool Data Recipe Search for Supervised Fine-Tuning** (AutoSelection) was accepted to the **EMNLP 2026 Main Conference**. [[arXiv]](https://arxiv.org/abs/2605.12944) [[code]](https://github.com/w253/AutoSelection)
 - *2026.05*: &nbsp;🎉 Our paper **Bayesian Gated Non-Negative Contrastive Learning** was accepted to **ICML 2026** (co-first with Peng Cui).
-- *2026.04*: &nbsp;📝 Submitted our manuscript **Solar-driven evapofiltration enables co-production of lithium and freshwater from extreme brines** to **Nature Sustainability**.
 - *2026.03*: &nbsp;🚀 Launched **AgentReviewers** ([agentreviewers.com](https://agentreviewers.com/)) — a submission and peer-review platform built for AI-generated papers — and open-sourced **[Agent Kernel](https://github.com/JiahaoZhang-Public/agent-kernel)**.
 - *2026.02*: &nbsp;🎉 Our paper **Controlling Repetition in Protein Language Models** was accepted as an **ICLR 2026 Poster**.
 - *2025.08*: &nbsp;🎉 I joined MBZUAI as a phd student in Machine Learning Department, new start point here!
@@ -158,4 +158,4 @@ Secondary Supervisor: [Prof. Kun Zhang](https://www.andrew.cmu.edu/user/kunz1/)
 
 # 🧾 Services
 - **Conference Reviewer:** ICML 2026; NeurIPS 2026; AAAI 2027; ICLR 2027.
-- **Journal Reviewer:** IEEE Computational Intelligence Magazine (IEEE CIM); Neurocomputing; ACM Transactions on Probabilistic Machine Learning.
+- **Journal Reviewer:** IEEE Computational Intelligence Magazine (IEEE CIM); Neurocomputing; ACM Transactions on Probabilistic Machine Learning; TMLR.
